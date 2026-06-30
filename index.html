@@ -476,6 +476,13 @@
     ['cpu','ram','gpu','os'].forEach(id => { $(id).disabled = false; });
   }
 
+  /* Windows 11 corre software listado solo para Windows 10 */
+  function osCompatible(gameOs, selected) {
+    if (gameOs.includes(selected)) return true;
+    if (selected === 'win11' && gameOs.includes('win10')) return true;
+    return false;
+  }
+
   /* ── Lógica de búsqueda ── */
   function buscar() {
     const cpu   = parseInt($('cpu').value)  || 0;
@@ -492,7 +499,7 @@
       if (cpu   && g.min.cpu > cpu)            return false;
       if (ram   && g.min.ram > ram)            return false;
       if (gpu   && g.min.gpu > gpu)            return false;
-      if (os    && !g.min.os.includes(os))     return false;
+      if (os    && !osCompatible(g.min.os, os)) return false;
       if (g1    && !g.genres.includes(g1))     return false;
       if (g2    && !g.genres.includes(g2))     return false;
       if (multi === 'solo' && !g.multi.includes('solo')) return false;
