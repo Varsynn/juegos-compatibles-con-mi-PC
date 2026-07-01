@@ -554,6 +554,9 @@
             <option value="amd-r9-1">Ryzen 9 (serie 3000-5000)</option>
             <option value="amd-r9-2">Ryzen 9 (serie 7000 o superior)</option>
           </optgroup>
+          <optgroup label="APU portátil (handhelds)">
+            <option value="apu-zen2-deck">APU Zen 2 de handheld (Steam Deck y similares)</option>
+          </optgroup>
         </select>
       </div>
       <div class="field">
@@ -828,6 +831,7 @@
     'amd-r5-1': 3, 'amd-r5-2': 5,
     'amd-r7-1': 4, 'amd-r7-2': 6,
     'amd-r9-1': 7, 'amd-r9-2': 9,
+    'apu-zen2-deck': 4,
   };
 
   const GPU_TIERS = {
@@ -848,7 +852,7 @@
 
   /* ── Specs de dispositivos prefabricados (usando las claves del desplegable) ── */
   const PREFABS = {
-    steamdeck: { cpu:'amd-r5-1',  ram:'16', gpu:'rdna2-apu' },
+    steamdeck: { cpu:'apu-zen2-deck',  ram:'16', gpu:'rdna2-apu' },
     rogally:   { cpu:'amd-r7-2',  ram:'16', gpu:'gtx-1650'  },
     legionGo:  { cpu:'amd-r7-2',  ram:'16', gpu:'gtx-1650'  },
     gpd:       { cpu:'amd-r7-2',  ram:'16', gpu:'gtx-1650'  },
