@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>¿Puede mi PC correrlo?</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <style>
     :root {
       --bg: #0e0e12;
@@ -33,7 +34,97 @@
       color: var(--text);
       min-height: 100vh;
       padding: 2rem 1rem 4rem;
+      position: relative;
     }
+
+    /* ── Contador de visitas ── */
+    .visit-counter {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 12px;
+      color: #555;
+      font-weight: 400;
+      pointer-events: none;
+    }
+
+    /* ── Enlace al calendario (top-left) ── */
+    .nav-back {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nav-back:hover { color: var(--text); }
+
+    /* ── Pre-header: redes, Epic, Eneba ── */
+    .pre-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 1.5rem;
+    }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+    }
+    .social-links a {
+      color: #888;
+      font-size: 28px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+    .social-links a:hover { transform: scale(1.15); }
+    .social-links .fa-instagram:hover { color: #E4405F; }
+    .social-links .fa-tiktok:hover { color: #25F4EE; }
+    .social-links .fa-twitch:hover { color: #9146FF; }
+    .share-btn {
+      background: none; border: none; color: #888; font-size: 28px;
+      cursor: pointer; transition: all 0.2s ease; padding: 0;
+    }
+    .share-btn:hover { transform: scale(1.15); color: #f5d10a; }
+    .epic-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .creator-code {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #0f0f0f; border: 1px solid #333; border-radius: 20px;
+      padding: 6px 14px; font-size: 13px; color: #ccc; cursor: pointer;
+      transition: all 0.2s; white-space: nowrap;
+    }
+    .creator-code:hover { border-color: #0074e4; color: #fff; background: #0a1a2e; }
+    .creator-code .code-label { font-size: 10px; color: #555; text-transform: uppercase; letter-spacing: .05em; }
+    .creator-code .code-value { font-weight: 700; color: #0074e4; font-size: 14px; letter-spacing: .05em; }
+    .creator-code .code-copy { font-size: 10px; color: #555; }
+    .creator-code.copied { border-color: #4caf50; }
+    .creator-code.copied .code-copy { color: #4caf50; }
+    .epic-store-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #0f0f0f; border: 1px solid #333; border-radius: 20px;
+      padding: 6px 14px; font-size: 13px; color: #ccc;
+      text-decoration: none; transition: all 0.2s; white-space: nowrap;
+    }
+    .epic-store-link:hover { border-color: #fff; color: #fff; }
+    .eneba-banner {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
+      padding: 8px 16px; text-decoration: none; color: #ccc;
+      font-size: 13px; transition: all 0.2s ease;
+    }
+    .eneba-banner:hover { border-color: #f7b731; color: #f7b731; background: #1f1d10; }
 
     /* ── Cabecera ── */
     header {
@@ -250,6 +341,11 @@
       color: var(--success);
       border-color: rgba(62,207,142,0.25);
     }
+    .tag-fail {
+      background: rgba(220,60,60,0.1);
+      color: #e05c5c;
+      border-color: rgba(220,60,60,0.25);
+    }
 
     /* ── Estado vacío / error ── */
     .empty {
@@ -357,6 +453,40 @@
 <body>
 
 <div class="container">
+
+  <div id="visit-counter" class="visit-counter"></div>
+
+  <a href="https://varsynn.github.io/calendario/" class="nav-back" target="_self">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    Calendario de lanzamientos
+  </a>
+
+  <div class="pre-header">
+    <div class="social-links">
+      <a href="https://www.instagram.com/ofertasspeedrun" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@ofertasspeedrun" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+      <a href="https://twitch.tv/varsynn" target="_blank" aria-label="Twitch"><i class="fab fa-twitch"></i></a>
+      <button class="share-btn" onclick="sharePage()" aria-label="Compartir"><i class="fas fa-share-nodes"></i></button>
+    </div>
+    <div class="epic-row">
+      <button class="creator-code" id="creator-code-btn" onclick="copyCreatorCode()" title="Clic para copiar el código">
+        <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 24 24" fill="none" stroke="#0074e4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7H8a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 7V5a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v2"/></svg>
+        <div>
+          <div class="code-label">Código creador Epic</div>
+          <div class="code-value">VARSYN</div>
+        </div>
+        <span class="code-copy" id="copy-status">📋 Copiar</span>
+      </button>
+      <a href="https://store.epicgames.com/" target="_blank" rel="noopener" class="epic-store-link">
+        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" height="14" style="fill:#fff"><path d="M3.537 0C2.165 0 1.66.506 1.66 1.879V18.44a4.262 4.262 0 00.02.433c.031.3.037.59.316.92.027.033.311.245.311.245.153.075.258.13.43.2l8.335 3.491c.433.199.614.276.928.27h.002c.314.006.495-.071.928-.27l8.335-3.492c.172-.07.277-.124.43-.2 0 0 .284-.211.311-.243.28-.33.285-.621.316-.92a4.261 4.261 0 00.02-.434V1.879c0-1.373-.506-1.88-1.878-1.88zm13.366 3.11h.68c1.138 0 1.688.553 1.688 1.696v1.88h-1.374v-1.8c0-.369-.17-.54-.523-.54h-.235c-.367 0-.537.17-.537.539v5.81c0 .369.17.54.537.54h.262c.353 0 .523-.171.523-.54V8.619h1.373v2.143c0 1.144-.562 1.71-1.7 1.71h-.694c-1.138 0-1.7-.566-1.7-1.71V4.82c0-1.144.562-1.709 1.7-1.709zm-12.186.08h3.114v1.274H6.117v2.603h1.648v1.275H6.117v2.774h1.74v1.275h-3.14zm3.816 0h2.198c1.138 0 1.7.564 1.7 1.708v2.445c0 1.144-.562 1.71-1.7 1.71h-.799v3.338h-1.4zm4.53 0h1.4v9.201h-1.4zm-3.13 1.235v3.392h.575c.354 0 .523-.171.523-.54V4.965c0-.368-.17-.54-.523-.54zm-3.74 10.147a1.708 1.708 0 01.591.108 1.745 1.745 0 01.49.299l-.452.546a1.247 1.247 0 00-.308-.195.91.91 0 00-.363-.068.658.658 0 00-.28.06.703.703 0 00-.224.163.783.783 0 00-.151.243.799.799 0 00-.056.299v.008a.852.852 0 00.056.31.7.7 0 00.157.245.736.736 0 00.238.16.774.774 0 00.303.058.79.79 0 00.445-.116v-.339h-.548v-.565H7.37v1.255a2.019 2.019 0 01-.524.307 1.789 1.789 0 01-.683.123 1.642 1.642 0 01-.602-.107 1.46 1.46 0 01-.478-.3 1.371 1.371 0 01-.318-.455 1.438 1.438 0 01-.115-.58v-.008a1.426 1.426 0 01.113-.57 1.449 1.449 0 01.312-.46 1.418 1.418 0 01.474-.309 1.58 1.58 0 01.598-.111zm11.963.008a2.006 2.006 0 01.612.094 1.61 1.61 0 01.507.277l-.386.546a1.562 1.562 0 00-.39-.205 1.178 1.178 0 00-.388-.07.347.347 0 00-.208.052.154.154 0 00-.07.127v.008a.158.158 0 00.022.084.198.198 0 00.076.066.831.831 0 00.147.06c.062.02.14.04.236.061a3.389 3.389 0 01.43.122 1.292 1.292 0 01.328.17.678.678 0 01.207.24.739.739 0 01.071.337v.008a.865.865 0 01-.081.382.82.82 0 01-.229.285 1.032 1.032 0 01-.353.18 1.606 1.606 0 01-.46.061 2.16 2.16 0 01-.71-.116 1.718 1.718 0 01-.593-.346l.43-.514c.277.223.578.335.9.335a.457.457 0 00.236-.05.157.157 0 00.082-.142v-.008a.15.15 0 00-.02-.077.204.204 0 00-.073-.066.753.753 0 00-.143-.062 2.45 2.45 0 00-.233-.062 5.036 5.036 0 01-.413-.113 1.26 1.26 0 01-.331-.16.72.72 0 01-.222-.243.73.73 0 01-.082-.36v-.008a.863.863 0 01.074-.359.794.794 0 01.214-.283 1.007 1.007 0 01.34-.185 1.423 1.423 0 01.448-.066zm-9.358.025h.742l1.183 2.81h-.825l-.203-.499H8.623l-.198.498h-.81zm2.197.02h.814l.663 1.08.663-1.08h.814v2.79h-.766v-1.602l-.711 1.091h-.016l-.707-1.083v1.593h-.754zm3.469 0h2.235v.658h-1.473v.422h1.334v.61h-1.334v.442h1.493v.658h-2.255zm-5.3.897l-.315.793h.624z"/></svg>
+        Epic Games Store
+      </a>
+    </div>
+    <a class="eneba-banner" href="https://www.eneba.com/es/?af_id=borjaarzua01&utm_medium=infl&utm_source=borjaarzua01" target="_blank" rel="noopener">
+      <img src="https://static.eneba.games/branding/enebaLogoInverted.svg" alt="Eneba" style="height:20px;">
+      <span>🎮 Consigue juegos baratos con mi enlace de afiliado</span>
+    </a>
+  </div>
 
   <header>
     <h1>¿Puede mi PC <span>correrlo</span>?</h1>
@@ -485,21 +615,9 @@
             <option value="rx-9070">RX 9060 XT / 9070 (XT)</option>
           </optgroup>
           <optgroup label="Integrada / portátil">
-            <option value="integrada">Gráfica integrada (RDNA2/3, Iris Xe...)</option>
+            <option value="integrada">Gráfica integrada débil (Intel Iris Xe, AMD básica)</option>
+            <option value="rdna2-apu">GPU integrada RDNA 2/3 (Steam Deck, portátiles AMD APU)</option>
           </optgroup>
-        </select>
-      </div>
-      <div class="field">
-        <label>
-          <svg class="ico" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          Sistema operativo
-        </label>
-        <select id="os" onchange="syncSelects()">
-          <option value="">Cualquier OS</option>
-          <option value="win10">Windows 10</option>
-          <option value="win11">Windows 11</option>
-          <option value="linux">Linux / SteamOS</option>
-          <option value="mac">macOS</option>
         </select>
       </div>
     </div>
@@ -719,14 +837,15 @@
     'rx-7700': 4, 'rx-7800': 6, 'rx-7900': 8,
     'rx-9070': 6,
     'integrada': 1,
+    'rdna2-apu': 2,
   };
 
   /* ── Specs de dispositivos prefabricados (usando las claves del desplegable) ── */
   const PREFABS = {
-    steamdeck: { cpu:'amd-r5-1',  ram:'16', gpu:'integrada', os:'linux' },
-    rogally:   { cpu:'amd-r7-2',  ram:'16', gpu:'rx-6700',   os:'win11' },
-    legionGo:  { cpu:'amd-r7-2',  ram:'16', gpu:'rx-6700',   os:'win11' },
-    gpd:       { cpu:'amd-r7-2',  ram:'16', gpu:'rx-6700',   os:'win11' },
+    steamdeck: { cpu:'amd-r5-1',  ram:'16', gpu:'rdna2-apu' },
+    rogally:   { cpu:'amd-r7-2',  ram:'16', gpu:'rx-6700'   },
+    legionGo:  { cpu:'amd-r7-2',  ram:'16', gpu:'rx-6700'   },
+    gpd:       { cpu:'amd-r7-2',  ram:'16', gpu:'rx-6700'   },
   };
 
   /* ── Texto del modal de ayuda (único, cubre CPU + GPU + RAM) ── */
@@ -755,26 +874,18 @@
   function onPrefab() {
     const val = $('prefab').value;
     const locked = !!val;
-    ['cpu','ram','gpu','os'].forEach(id => { $(id).disabled = locked; });
+    ['cpu','ram','gpu'].forEach(id => { $(id).disabled = locked; });
     if (val && PREFABS[val]) {
       const p = PREFABS[val];
       $('cpu').value = p.cpu;
       $('ram').value = p.ram;
       $('gpu').value = p.gpu;
-      $('os').value  = p.os;
     }
   }
 
   function syncSelects() {
     $('prefab').value = '';
-    ['cpu','ram','gpu','os'].forEach(id => { $(id).disabled = false; });
-  }
-
-  /* Windows 11 corre software listado solo para Windows 10 */
-  function osCompatible(gameOs, selected) {
-    if (gameOs.includes(selected)) return true;
-    if (selected === 'win11' && gameOs.includes('win10')) return true;
-    return false;
+    ['cpu','ram','gpu'].forEach(id => { $(id).disabled = false; });
   }
 
   /* ── Lógica de búsqueda ── */
@@ -784,24 +895,22 @@
     const cpu  = CPU_TIERS[cpuKey] || 0;
     const gpu  = GPU_TIERS[gpuKey] || 0;
     const ram  = parseInt($('ram').value) || 0;
-    const os   = $('os').value;
     const g1   = $('genre1').value;
     const g2   = $('genre2').value;
     const g3   = $('genre3').value;
     const g4   = $('genre4').value;
     const multi = $('multi').value;
 
-    const nada = !cpuKey && !ram && !gpuKey && !os && !g1 && !g2 && !g3 && !g4 && !multi;
+    const nada = !cpuKey && !ram && !gpuKey && !g1 && !g2 && !g3 && !g4 && !multi;
 
     const found = GAMES.filter(g => {
-      if (cpu   && g.min.cpu > cpu)            return false;
-      if (ram   && g.min.ram > ram)            return false;
-      if (gpu   && g.min.gpu > gpu)            return false;
-      if (os    && !osCompatible(g.min.os, os)) return false;
-      if (g1    && !g.genres.includes(g1))     return false;
-      if (g2    && !g.genres.includes(g2))     return false;
-      if (g3    && !g.genres.includes(g3))     return false;
-      if (g4    && !g.genres.includes(g4))     return false;
+      if (cpu   && g.min.cpu > cpu)  return false;
+      if (ram   && g.min.ram > ram)  return false;
+      if (gpu   && g.min.gpu > gpu)  return false;
+      if (g1    && !g.genres.includes(g1))  return false;
+      if (g2    && !g.genres.includes(g2))  return false;
+      if (g3    && !g.genres.includes(g3))  return false;
+      if (g4    && !g.genres.includes(g4))  return false;
       if (multi === 'solo' && !g.multi.includes('solo')) return false;
       if (multi === 'pvp'  && !g.multi.includes('pvp'))  return false;
       if (multi === 'coop' && !g.multi.includes('coop')) return false;
@@ -843,15 +952,17 @@
       const genres = (g.genres || []).map(x => `<span class="tag tag-genre">${genreName(x)}</span>`).join('');
       const multis = (g.multi  || []).map(x => `<span class="tag tag-multi">${multiName(x)}</span>`).join('');
 
-      let compatTag = `<span class="tag tag-compat">✓ Compatible</span>`;
+      let compatTags = '';
       if (specs && (specs.cpu || specs.ram || specs.gpu)) {
         const cumpleRec =
           (!specs.cpu || g.rec.cpu <= specs.cpu) &&
           (!specs.ram || g.rec.ram <= specs.ram) &&
           (!specs.gpu || g.rec.gpu <= specs.gpu);
-        compatTag = cumpleRec
-          ? `<span class="tag tag-compat">✓ Recomendado</span>`
-          : `<span class="tag tag-compat">✓ Mínimo cumplido</span>`;
+        compatTags =
+          `<span class="tag tag-compat">✓ Mínimos</span>` +
+          (cumpleRec
+            ? `<span class="tag tag-compat">✓ Recomendados</span>`
+            : `<span class="tag tag-fail">✗ Recomendados</span>`);
       }
 
       return `
@@ -862,12 +973,53 @@
             <p class="game-desc">${g.desc}</p>
             <div class="tags">
               ${genres}${multis}
-              ${compatTag}
+              ${compatTags}
             </div>
           </div>
         </div>`;
     }).join('');
     el.innerHTML = header + cards;
+  }
+
+  // Contador de visitas — namespace propio para no mezclar con /calendario
+  fetch('https://api.counterapi.dev/v1/ofertasspeedrun/hardware/up')
+    .then(res => res.json())
+    .then(data => {
+      const val = data.count ?? data.value ?? null;
+      if (val !== null) {
+        document.getElementById('visit-counter').textContent = '👀 ' + Number(val).toLocaleString('es-ES') + ' visitas';
+      }
+    })
+    .catch(() => {
+      document.getElementById('visit-counter').textContent = '';
+    });
+
+  function sharePage() {
+    const url = window.location.href;
+    if (navigator.share) {
+      navigator.share({ title: '¿Puede mi PC correrlo? – ofertasspeedrun', url: url }).catch(() => {});
+    } else {
+      navigator.clipboard.writeText(url).then(() => { alert('Enlace copiado al portapapeles'); });
+    }
+  }
+
+  function copyCreatorCode() {
+    navigator.clipboard.writeText('VARSYN').then(() => {
+      const btn = document.getElementById('creator-code-btn');
+      const status = document.getElementById('copy-status');
+      btn.classList.add('copied');
+      status.textContent = '✅ Copiado';
+      setTimeout(() => { btn.classList.remove('copied'); status.textContent = '📋 Copiar'; }, 2000);
+    }).catch(() => {
+      const el = document.createElement('textarea');
+      el.value = 'VARSYN';
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+      document.getElementById('copy-status').textContent = '✅ Copiado';
+      setTimeout(() => { document.getElementById('copy-status').textContent = '📋 Copiar'; }, 2000);
+    });
   }
 </script>
 </body>
