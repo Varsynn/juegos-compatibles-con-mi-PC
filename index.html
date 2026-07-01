@@ -102,8 +102,9 @@
     /* ── Grid de selectores ── */
     .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
     .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem; }
+    .grid4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 0.75rem; }
     @media (max-width: 600px) {
-      .grid2, .grid3 { grid-template-columns: 1fr; }
+      .grid2, .grid3, .grid4 { grid-template-columns: 1fr; }
     }
 
     .field { display: flex; flex-direction: column; gap: 0.35rem; }
@@ -507,48 +508,111 @@
   <!-- ── Filtros opcionales ── -->
   <div class="card">
     <p class="section-title">Filtros opcionales</p>
-    <div class="grid3">
+    <div class="grid4" style="margin-bottom: 0.75rem;">
       <div class="field">
         <label>
           <svg class="ico" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><circle cx="7" cy="7" r="1.5" fill="currentColor"/></svg>
-          Género principal
+          Género 1
         </label>
         <select id="genre1">
           <option value="">Cualquier género</option>
-          <option value="rpg">RPG</option>
-          <option value="jrpg">JRPG</option>
-          <option value="soulslike">Soulslike</option>
-          <option value="openworld">Mundo abierto</option>
-          <option value="fps">FPS</option>
-          <option value="strategy">Estrategia</option>
-          <option value="platformer">Plataformas</option>
-          <option value="horror">Terror</option>
+          <option value="action">Acción</option>
+          <option value="adventure">Aventura</option>
+          <option value="casual">Casual</option>
           <option value="fantasy">Fantasía</option>
-          <option value="roguelite">Roguelite</option>
-          <option value="metroidvania">Metroidvania</option>
+          <option value="fps">FPS</option>
+          <option value="horror">Terror</option>
+          <option value="indie">Indie</option>
+          <option value="mmo">MMO</option>
+          <option value="openworld">Mundo abierto</option>
+          <option value="rpg">RPG</option>
+          <option value="sandbox">Sandbox</option>
+          <option value="scifi">Ciencia ficción</option>
+          <option value="soulslike">Soulslike</option>
+          <option value="sports">Deportes</option>
+          <option value="strategy">Estrategia</option>
+          <option value="survival">Supervivencia</option>
         </select>
       </div>
       <div class="field">
         <label>
           <svg class="ico" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><circle cx="7" cy="7" r="1.5" fill="currentColor"/></svg>
-          Género secundario
+          Género 2
         </label>
         <select id="genre2">
           <option value="">Cualquier género</option>
-          <option value="rpg">RPG</option>
-          <option value="jrpg">JRPG</option>
-          <option value="soulslike">Soulslike</option>
-          <option value="openworld">Mundo abierto</option>
-          <option value="fps">FPS</option>
-          <option value="strategy">Estrategia</option>
-          <option value="platformer">Plataformas</option>
-          <option value="horror">Terror</option>
+          <option value="action">Acción</option>
+          <option value="adventure">Aventura</option>
+          <option value="casual">Casual</option>
           <option value="fantasy">Fantasía</option>
-          <option value="roguelite">Roguelite</option>
-          <option value="metroidvania">Metroidvania</option>
+          <option value="fps">FPS</option>
+          <option value="horror">Terror</option>
+          <option value="indie">Indie</option>
+          <option value="mmo">MMO</option>
+          <option value="openworld">Mundo abierto</option>
+          <option value="rpg">RPG</option>
+          <option value="sandbox">Sandbox</option>
+          <option value="scifi">Ciencia ficción</option>
+          <option value="soulslike">Soulslike</option>
+          <option value="sports">Deportes</option>
+          <option value="strategy">Estrategia</option>
+          <option value="survival">Supervivencia</option>
         </select>
       </div>
       <div class="field">
+        <label>
+          <svg class="ico" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><circle cx="7" cy="7" r="1.5" fill="currentColor"/></svg>
+          Género 3
+        </label>
+        <select id="genre3">
+          <option value="">Cualquier género</option>
+          <option value="action">Acción</option>
+          <option value="adventure">Aventura</option>
+          <option value="casual">Casual</option>
+          <option value="fantasy">Fantasía</option>
+          <option value="fps">FPS</option>
+          <option value="horror">Terror</option>
+          <option value="indie">Indie</option>
+          <option value="mmo">MMO</option>
+          <option value="openworld">Mundo abierto</option>
+          <option value="rpg">RPG</option>
+          <option value="sandbox">Sandbox</option>
+          <option value="scifi">Ciencia ficción</option>
+          <option value="soulslike">Soulslike</option>
+          <option value="sports">Deportes</option>
+          <option value="strategy">Estrategia</option>
+          <option value="survival">Supervivencia</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>
+          <svg class="ico" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><circle cx="7" cy="7" r="1.5" fill="currentColor"/></svg>
+          Género 4
+        </label>
+        <select id="genre4">
+          <option value="">Cualquier género</option>
+          <option value="action">Acción</option>
+          <option value="adventure">Aventura</option>
+          <option value="casual">Casual</option>
+          <option value="fantasy">Fantasía</option>
+          <option value="fps">FPS</option>
+          <option value="horror">Terror</option>
+          <option value="indie">Indie</option>
+          <option value="mmo">MMO</option>
+          <option value="openworld">Mundo abierto</option>
+          <option value="rpg">RPG</option>
+          <option value="sandbox">Sandbox</option>
+          <option value="scifi">Ciencia ficción</option>
+          <option value="soulslike">Soulslike</option>
+          <option value="sports">Deportes</option>
+          <option value="strategy">Estrategia</option>
+          <option value="survival">Supervivencia</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="grid3">
+      <div class="field" style="grid-column: 1 / -1; max-width: 340px;">
         <label>
           <svg class="ico" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           Multijugador
@@ -701,9 +765,11 @@
     const os   = $('os').value;
     const g1   = $('genre1').value;
     const g2   = $('genre2').value;
+    const g3   = $('genre3').value;
+    const g4   = $('genre4').value;
     const multi = $('multi').value;
 
-    const nada = !cpuKey && !ram && !gpuKey && !os && !g1 && !g2 && !multi;
+    const nada = !cpuKey && !ram && !gpuKey && !os && !g1 && !g2 && !g3 && !g4 && !multi;
 
     const found = GAMES.filter(g => {
       if (cpu   && g.min.cpu > cpu)            return false;
@@ -712,6 +778,8 @@
       if (os    && !osCompatible(g.min.os, os)) return false;
       if (g1    && !g.genres.includes(g1))     return false;
       if (g2    && !g.genres.includes(g2))     return false;
+      if (g3    && !g.genres.includes(g3))     return false;
+      if (g4    && !g.genres.includes(g4))     return false;
       if (multi === 'solo' && !g.multi.includes('solo')) return false;
       if (multi === 'pvp'  && !g.multi.includes('pvp'))  return false;
       if (multi === 'coop' && !g.multi.includes('coop')) return false;
@@ -723,9 +791,14 @@
 
   /* ── Renderizado ── */
   function genreName(g) {
-    const map = { rpg:'RPG', jrpg:'JRPG', soulslike:'Soulslike', openworld:'Mundo abierto',
-      fps:'FPS', strategy:'Estrategia', platformer:'Plataformas', horror:'Terror',
-      fantasy:'Fantasía', roguelite:'Roguelite', metroidvania:'Metroidvania' };
+    const map = {
+      action:'Acción', adventure:'Aventura', casual:'Casual',
+      fantasy:'Fantasía', fps:'FPS', horror:'Terror',
+      indie:'Indie', mmo:'MMO', openworld:'Mundo abierto',
+      rpg:'RPG', sandbox:'Sandbox', scifi:'Ciencia ficción',
+      soulslike:'Soulslike', sports:'Deportes',
+      strategy:'Estrategia', survival:'Supervivencia'
+    };
     return map[g] || g;
   }
   function multiName(m) {
