@@ -748,6 +748,12 @@
       <svg class="ico" style="width:18px;height:18px;stroke:#fff" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
       Buscar juegos compatibles
     </button>
+
+    <p style="font-size:12px;color:#777;text-align:center;margin-top:10px;line-height:1.5;">
+      * Esto es una búsqueda orientativa basada en equivalencias de hardware, no una comprobación exacta.
+      El rendimiento real puede variar según ajustes gráficos, drivers, optimización del juego y otros factores.
+      No me hago responsable de que un juego no funcione al 100% como esperabas.
+    </p>
   </div>
 
   <!-- ── Resultados ── -->
@@ -843,9 +849,9 @@
   /* ── Specs de dispositivos prefabricados (usando las claves del desplegable) ── */
   const PREFABS = {
     steamdeck: { cpu:'amd-r5-1',  ram:'16', gpu:'rdna2-apu' },
-    rogally:   { cpu:'amd-r7-2',  ram:'16', gpu:'rx-6700'   },
-    legionGo:  { cpu:'amd-r7-2',  ram:'16', gpu:'rx-6700'   },
-    gpd:       { cpu:'amd-r7-2',  ram:'16', gpu:'rx-6700'   },
+    rogally:   { cpu:'amd-r7-2',  ram:'16', gpu:'gtx-1650'  },
+    legionGo:  { cpu:'amd-r7-2',  ram:'16', gpu:'gtx-1650'  },
+    gpd:       { cpu:'amd-r7-2',  ram:'16', gpu:'gtx-1650'  },
   };
 
   /* ── Texto del modal de ayuda (único, cubre CPU + GPU + RAM) ── */
@@ -1022,5 +1028,106 @@
     });
   }
 </script>
+
+<!-- BANNER DE COOKIES -->
+<style>
+  #cookie-banner {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
+    background: #1a1a1a; border-top: 1px solid #333;
+    padding: 14px 20px; display: flex; align-items: center;
+    justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    font-size: 13px; color: #aaa;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
+  }
+  #cookie-banner a { color: #66c0f4; text-decoration: underline; }
+  #cookie-banner-btns { display: flex; gap: 8px; flex-shrink: 0; }
+  .cookie-btn-accept {
+    background: #66c0f4; color: #000; border: none;
+    border-radius: 6px; padding: 7px 16px; font-size: 13px;
+    font-weight: 600; cursor: pointer;
+  }
+  .cookie-btn-accept:hover { background: #89d0f7; }
+  .cookie-btn-reject {
+    background: none; color: #888; border: 1px solid #444;
+    border-radius: 6px; padding: 7px 16px; font-size: 13px;
+    cursor: pointer;
+  }
+  .cookie-btn-reject:hover { color: #ccc; border-color: #666; }
+
+  /* Modal política */
+  #cookie-modal {
+    display: none; position: fixed; inset: 0; z-index: 10000;
+    background: rgba(0,0,0,0.7); align-items: center; justify-content: center;
+  }
+  #cookie-modal.open { display: flex; }
+  #cookie-modal-box {
+    background: #1a1a1a; border: 1px solid #333; border-radius: 12px;
+    padding: 28px; max-width: 520px; width: 90%; max-height: 80vh;
+    overflow-y: auto; color: #ccc; font-size: 13px; line-height: 1.7;
+  }
+  #cookie-modal-box h2 { color: #fff; font-size: 1rem; margin-bottom: 12px; }
+  #cookie-modal-box h3 { color: #ddd; font-size: 0.85rem; margin: 14px 0 4px; }
+  #cookie-modal-box .close-modal {
+    display: block; margin-top: 20px; background: #333; border: none;
+    color: #ccc; border-radius: 6px; padding: 8px 20px;
+    cursor: pointer; font-size: 13px; width: 100%;
+  }
+  #cookie-modal-box .close-modal:hover { background: #444; }
+</style>
+
+<div id="cookie-banner">
+  <span>
+    🍪 Este sitio usa servicios de terceros (fuentes, scripts) que pueden usar cookies técnicas.
+    Al navegar aceptas su uso. <a href="#" onclick="document.getElementById('cookie-modal').classList.add('open');return false;">Más información</a>
+  </span>
+  <div id="cookie-banner-btns">
+    <button class="cookie-btn-reject" onclick="closeCookieBanner()">Rechazar no esenciales</button>
+    <button class="cookie-btn-accept" onclick="acceptCookies()">Aceptar</button>
+  </div>
+</div>
+
+<div id="cookie-modal">
+  <div id="cookie-modal-box">
+    <h2>🍪 Política de Cookies y Privacidad</h2>
+    <p>Este sitio web es operado por <strong>ofertasspeedrun (Varsyn)</strong> con fines informativos y de entretenimiento, sin ánimo de lucro directo salvo los enlaces de afiliación descritos a continuación.</p>
+
+    <h3>¿Qué cookies usamos?</h3>
+    <p><strong>Cookies técnicas propias:</strong> Guardamos tu preferencia de cookies en el almacenamiento local de tu navegador (localStorage). No contienen datos personales y son necesarias para recordar tu elección.</p>
+    <p><strong>Servicios de terceros:</strong> Este sitio carga recursos externos (Font Awesome para iconos, imágenes de Steam y Epic Games). Estos servicios pueden registrar peticiones técnicas según sus propias políticas de privacidad. No instalamos cookies de seguimiento ni de publicidad propias.</p>
+
+    <h3>Enlace de afiliado (Eneba)</h3>
+    <p>Este sitio contiene un enlace de afiliado a <strong>Eneba</strong>. Si haces clic y realizas una compra, podría recibir una pequeña comisión sin coste adicional para ti. Las cookies que Eneba instala al visitar su web son responsabilidad de Eneba y están sujetas a <a href="https://www.eneba.com/es/privacy-policy" target="_blank">su política de privacidad</a>.</p>
+
+    <h3>Tus derechos</h3>
+    <p>Puedes rechazar el uso de cookies no esenciales en cualquier momento. Al tratarse de un sitio estático sin registro de usuarios, no almacenamos ningún dato personal identificable.</p>
+
+    <h3>Contacto</h3>
+    <p>Para cualquier consulta puedes contactarme a través de mis redes sociales: <a href="https://www.instagram.com/ofertasspeedrun" target="_blank">@ofertasspeedrun</a></p>
+
+    <button class="close-modal" onclick="document.getElementById('cookie-modal').classList.remove('open')">Cerrar</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  var pref = localStorage.getItem('cookie-consent');
+  if (pref === 'accepted' || pref === 'rejected') {
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+})();
+
+function acceptCookies() {
+  localStorage.setItem('cookie-consent', 'accepted');
+  document.getElementById('cookie-banner').style.display = 'none';
+  document.getElementById('cookie-modal').classList.remove('open');
+}
+
+function closeCookieBanner() {
+  localStorage.setItem('cookie-consent', 'rejected');
+  document.getElementById('cookie-banner').style.display = 'none';
+  document.getElementById('cookie-modal').classList.remove('open');
+}
+</script>
+
 </body>
 </html>
