@@ -880,7 +880,8 @@
     }
 
     // 2. Fusionar con base de datos manual (games_extra.json)
-    // Si el archivo no existe simplemente lo ignora sin error
+    // Si el archivo no existe simplemente lo ignora sin error.
+    // Van PRIMERO en la lista para que aparezcan antes en los resultados.
     try {
       const res = await fetch('games_extra.json');
       if (res.ok) {
@@ -889,7 +890,7 @@
         // Evitar duplicados por id
         const idsExistentes = new Set(GAMES.map(g => g.id));
         const nuevos = extraLista.filter(g => !idsExistentes.has(g.id));
-        GAMES = [...GAMES, ...nuevos];
+        GAMES = [...nuevos, ...GAMES];
       }
     } catch (_) {}
 
