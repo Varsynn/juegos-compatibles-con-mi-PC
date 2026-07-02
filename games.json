@@ -1876,8 +1876,6 @@
       "adventure",
       "sandbox",
       "openworld",
-      "fighting",
-      "metroidvania"
     ],
     "multi": [
       "solo"
@@ -1957,11 +1955,6 @@
       "action",
       "adventure",
       "puzzle",
-      "horror",
-      "openworld",
-      "fighting",
-      "metroidvania",
-      "fps"
     ],
     "multi": [
       "solo"
@@ -5751,8 +5744,6 @@
       "action",
       "fps",
       "openworld",
-      "fighting",
-      "adventure"
     ],
     "multi": [
       "solo",
@@ -15271,9 +15262,7 @@
       "action",
       "adventure",
       "scifi",
-      "fighting",
       "fps",
-      "arpg"
     ],
     "multi": [
       "solo"
@@ -16223,7 +16212,6 @@
       "indie",
       "action",
       "soulslike",
-      "arpg",
       "fighting",
       "fantasy"
     ],
@@ -20223,7 +20211,6 @@
       "action",
       "adventure",
       "rpg",
-      "fighting",
       "arpg",
       "scifi",
       "soulslike",
@@ -24565,7 +24552,6 @@
       "adventure",
       "sandbox",
       "openworld",
-      "fighting"
     ],
     "multi": [
       "solo"
@@ -36689,11 +36675,8 @@
     "genres": [
       "action",
       "adventure",
-      "horror",
       "sandbox",
       "openworld",
-      "fighting",
-      "puzzle"
     ],
     "multi": [
       "solo"
@@ -37063,7 +37046,6 @@
       "indie",
       "adventure",
       "casual",
-      "fighting"
     ],
     "multi": [
       "solo",
@@ -38710,7 +38692,6 @@
       "rpg",
       "mmo",
       "fantasy",
-      "fighting",
       "arpg"
     ],
     "multi": [
@@ -41029,7 +41010,6 @@
       "sandbox",
       "fps",
       "openworld",
-      "fighting"
     ],
     "multi": [
       "solo"
@@ -51426,7 +51406,6 @@
     "genres": [
       "action",
       "rpg",
-      "fighting",
       "adventure",
       "arpg",
       "fantasy",
@@ -53428,10 +53407,6 @@
     "genres": [
       "action",
       "fps",
-      "sandbox",
-      "fighting",
-      "adventure",
-      "openworld"
     ],
     "multi": [
       "solo",
@@ -56282,7 +56257,6 @@
       "mmo",
       "survival",
       "openworld",
-      "fighting",
       "adventure"
     ],
     "multi": [
