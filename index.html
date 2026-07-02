@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>¿Puede mi PC correrlo?</title>
+  <title>¿Qué juegos son compatibles con mi PC?</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <style>
     :root {
@@ -48,11 +48,17 @@
       pointer-events: none;
     }
 
-    /* ── Enlace al calendario (top-left) ── */
-    .nav-back {
+    /* ── Enlaces superiores (top-left): calendario + buscador ── */
+    .nav-links {
       position: absolute;
       top: 1rem;
       left: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .nav-back {
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -62,6 +68,10 @@
       transition: color 0.15s;
     }
     .nav-back:hover { color: var(--text); }
+    .nav-sep {
+      color: var(--border-hover);
+      font-size: 13px;
+    }
 
     /* ── Pre-header: redes, Epic, Eneba ── */
     .pre-header {
@@ -462,10 +472,17 @@
 
   <div id="visit-counter" class="visit-counter"></div>
 
-  <a href="https://varsynn.github.io/calendario/" class="nav-back" target="_self">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-    Calendario de lanzamientos
-  </a>
+  <div class="nav-links">
+    <a href="https://varsynn.github.io/calendario/" class="nav-back" target="_self">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      Calendario de lanzamientos
+    </a>
+    <span class="nav-sep">·</span>
+    <a href="https://varsynn.github.io/buscador/" class="nav-back" target="_self">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      Buscador de juegos
+    </a>
+  </div>
 
   <div class="pre-header">
     <div class="social-links">
@@ -495,7 +512,7 @@
   </div>
 
   <header>
-    <h1>¿Puede mi PC <span>correrlo</span>?</h1>
+    <h1>¿Qué juegos son <span>compatibles</span> con mi PC?</h1>
     <p>Encuentra juegos compatibles con tu hardware en segundos</p>
   </header>
 
@@ -1113,7 +1130,7 @@
   function sharePage() {
     const url = window.location.href;
     if (navigator.share) {
-      navigator.share({ title: '¿Puede mi PC correrlo? – ofertasspeedrun', url: url }).catch(() => {});
+      navigator.share({ title: '¿Qué juegos son compatibles con mi PC? – ofertasspeedrun', url: url }).catch(() => {});
     } else {
       navigator.clipboard.writeText(url).then(() => { alert('Enlace copiado al portapapeles'); });
     }
