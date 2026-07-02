@@ -265,6 +265,12 @@
     }
     .btn-search:hover { background: var(--accent-hover); }
     .btn-search:active { transform: scale(0.98); }
+    .btn-search:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .btn-search:disabled:hover { background: var(--accent); }
 
     /* ── Resultados ── */
     #results { margin-top: 1.5rem; }
@@ -815,9 +821,9 @@
       </div>
     </div>
 
-    <button class="btn-search" onclick="buscar()">
+    <button class="btn-search" id="btnBuscar" onclick="buscar()" disabled>
       <svg class="ico" style="width:18px;height:18px;stroke:#fff" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      Buscar juegos compatibles
+      <span id="btnBuscarTexto">Cargando juegos...</span>
     </button>
 
     <p style="font-size:12px;color:#777;text-align:center;margin-top:10px;line-height:1.5;">
@@ -894,7 +900,21 @@
           No se pudo cargar games.json ni progreso.json.<br>
           Comprueba que alguno de los dos archivos está en la misma carpeta que index.html.
         </div>`;
+      // El botón se queda desactivado a propósito: sin datos no hay nada
+      // que buscar, y dejarlo activo solo llevaría a un resultado vacío
+      // engañoso en vez de al aviso de arriba.
+      $('btnBuscarTexto').textContent = 'Buscar juegos compatibles';
+      return;
     }
+
+    // Solo ahora GAMES contiene de verdad las dos bases fusionadas —
+    // antes de esto, buscar "moba" muy rápido al entrar podía devolver
+    // solo lo que hubiera en games.json (p.ej. League of Legends) sin
+    // los MOBA de games_extra.json, porque cargarJuegos() se lanza sin
+    // esperar (fire-and-forget) y una búsqueda hecha a tiempo se ejecuta
+    // contra un GAMES todavía a medio rellenar.
+    $('btnBuscarTexto').textContent = 'Buscar juegos compatibles';
+    $('btnBuscar').disabled = false;
   }
   cargarJuegos();
 
