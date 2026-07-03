@@ -580,6 +580,14 @@
           <optgroup label="APU portátil (handhelds)">
             <option value="apu-zen2-deck">APU Zen 2 de handheld (Steam Deck y similares)</option>
           </optgroup>
+          <optgroup label="CPUs antiguas (pre-Core i / pre-Ryzen)">
+            <option value="old-intel-1">Intel Core 2 Duo / Quad, Pentium, Celeron</option>
+            <option value="old-amd-1">AMD Phenom / Athlon / FX</option>
+          </optgroup>
+          <optgroup label="Genérica sin marca concreta">
+            <option value="generic-dual">Dual-Core genérico (2 núcleos, sin marca)</option>
+            <option value="generic-quad">Quad-Core genérico o más (4+ núcleos, sin marca)</option>
+          </optgroup>
         </select>
       </div>
       <div class="field">
@@ -644,6 +652,17 @@
             <option value="integrada">Gráfica integrada débil (Intel Iris Xe, AMD básica)</option>
             <option value="rdna2-apu">GPU integrada RDNA 2/3 (Steam Deck, portátiles AMD APU)</option>
           </optgroup>
+          <optgroup label="NVIDIA GeForce (series 400-900, antiguas)">
+            <option value="gtx-old-tier1">GTX 460 / 560 / 650 (Ti) / 660 (Ti) / 670 / 680 / 750 / 760 / 770 / 950 / 960 / GT 610-740 / GTS 450 / 8800 GT</option>
+            <option value="gtx-970">GTX 970</option>
+            <option value="gtx-780">GTX 780 / 780 Ti</option>
+            <option value="gtx-980">GTX 980 / 980 Ti</option>
+          </optgroup>
+          <optgroup label="AMD Radeon (series HD/R9, antiguas)">
+            <option value="rx-old-tier1">Radeon HD 5750 / 6850 / 7730 / 7770 / 7850 / 7870, R9 270 (X) / 280 (X)</option>
+            <option value="r9-290">R9 290 / 290X</option>
+            <option value="r9-390">R9 390 / 390X</option>
+          </optgroup>
         </select>
       </div>
     </div>
@@ -673,6 +692,7 @@
           <option value="fighting">Lucha</option>
           <option value="fps">FPS</option>
           <option value="gacha">Gacha</option>
+          <option value="free">Gratis para jugar</option>
           <option value="horror">Terror</option>
           <option value="indie">Indie</option>
           <option value="cardgame">Juego de cartas</option>
@@ -721,6 +741,7 @@
           <option value="fighting">Lucha</option>
           <option value="fps">FPS</option>
           <option value="gacha">Gacha</option>
+          <option value="free">Gratis para jugar</option>
           <option value="horror">Terror</option>
           <option value="indie">Indie</option>
           <option value="cardgame">Juego de cartas</option>
@@ -769,6 +790,7 @@
           <option value="fighting">Lucha</option>
           <option value="fps">FPS</option>
           <option value="gacha">Gacha</option>
+          <option value="free">Gratis para jugar</option>
           <option value="horror">Terror</option>
           <option value="indie">Indie</option>
           <option value="cardgame">Juego de cartas</option>
@@ -817,6 +839,7 @@
           <option value="fighting">Lucha</option>
           <option value="fps">FPS</option>
           <option value="gacha">Gacha</option>
+          <option value="free">Gratis para jugar</option>
           <option value="horror">Terror</option>
           <option value="indie">Indie</option>
           <option value="cardgame">Juego de cartas</option>
@@ -974,6 +997,8 @@
     'amd-r7-1': 4, 'amd-r7-2': 6,
     'amd-r9-1': 7, 'amd-r9-2': 9,
     'apu-zen2-deck': 4,
+    'old-intel-1': 1, 'old-amd-1': 1,
+    'generic-dual': 2, 'generic-quad': 3,
   };
 
   const GPU_TIERS = {
@@ -990,6 +1015,8 @@
     'rx-9070': 6,
     'integrada': 1,
     'rdna2-apu': 2,
+    'gtx-old-tier1': 1, 'gtx-970': 2, 'gtx-780': 2, 'gtx-980': 3,
+    'rx-old-tier1': 1, 'r9-290': 2, 'r9-390': 3,
   };
 
   /* ── Specs de dispositivos prefabricados (usando las claves del desplegable) ── */
@@ -1080,7 +1107,7 @@
       cardgame:'Juego de cartas', casual:'Casual',
       citybuilder:'City Builder', early_access:'Acceso anticipado',
       extraction:'Extraction Shooter', fantasy:'Fantasía', fighting:'Lucha',
-      fps:'FPS', gacha:'Gacha', horror:'Terror', indie:'Indie',
+      fps:'FPS', gacha:'Gacha', free:'Gratis para jugar', horror:'Terror', indie:'Indie',
       jrpg:'JRPG', metroidvania:'Metroidvania', mmo:'MMO', moba:'MOBA',
       openworld:'Mundo abierto', platformer:'Plataformas', puzzle:'Puzle',
       racing:'Carreras', rhythm:'Ritmo', roguelite:'Roguelite', rpg:'RPG', rts:'RTS',
