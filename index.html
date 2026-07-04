@@ -246,6 +246,7 @@
       cursor: not-allowed;
     }
     select option { background: #1e1e28; }
+    select option[hidden], select optgroup[hidden] { display: none; }
 
     /* ── Divisor ── */
     hr {
@@ -521,14 +522,19 @@
     <p class="section-title">Dispositivo prefabricado</p>
     <div class="prefab-row">
       <label>Elegir dispositivo</label>
-      <select id="prefab" onchange="onPrefab()">
+      <select id="prefab" onchange="onPrefabFamilia()">
         <option value="">— Elige o configura abajo —</option>
-        <option value="steamdeck">Steam Deck (AMD Zen 2 / RDNA 2 / 16 GB / SteamOS)</option>
-        <option value="rogally">ASUS ROG Ally (Ryzen Z1 Extreme / RDNA 3 / 16 GB / Windows 11)</option>
-        <option value="legionGo">Lenovo Legion Go (Ryzen Z1 Extreme / RDNA 3 / 16 GB / Windows 11)</option>
-        <option value="gpd">GPD Win 4 (Ryzen 7840U / RDNA 3 / 16 GB / Windows 11)</option>
+        <option value="steamdeck">Steam Deck</option>
+        <option value="rogally">ASUS ROG Ally</option>
+        <option value="legionGo">Lenovo Legion Go</option>
+        <option value="gpdwin4">GPD Win 4</option>
       </select>
       <span class="or-pill">o configura tú</span>
+    </div>
+    <div class="prefab-row" id="prefabVarianteRow" style="display:none; margin-top:0.6rem;">
+      <label>Modelo / chip</label>
+      <select id="prefabVariante" onchange="onPrefabVariante()">
+      </select>
     </div>
   </div>
 
@@ -577,8 +583,14 @@
             <option value="amd-r9-1">Ryzen 9 (serie 3000-5000)</option>
             <option value="amd-r9-2">Ryzen 9 (serie 7000 o superior)</option>
           </optgroup>
-          <optgroup label="APU portátil (handhelds)">
-            <option value="apu-zen2-deck">APU Zen 2 de handheld (Steam Deck y similares)</option>
+          <optgroup label="APU portátil (handhelds)" data-handheld="1" hidden>
+            <option value="apu-zen2-deck">Zen 2 (Steam Deck y similares)</option>
+            <option value="apu-z1extreme">Ryzen Z1 Extreme (ROG Ally, Legion Go)</option>
+            <option value="apu-z1">Ryzen Z1 — sin "Extreme" (ROG Ally base)</option>
+            <option value="apu-6800u">Ryzen 7 6800U (GPD Win 4)</option>
+            <option value="apu-7840u">Ryzen 7 7840U / 7640U (GPD Win 4)</option>
+            <option value="apu-8840u">Ryzen 7 8840U (GPD Win 4)</option>
+            <option value="apu-hx370">Ryzen AI 9 HX 370 (GPD Win 4)</option>
           </optgroup>
           <optgroup label="CPUs antiguas (pre-Core i / pre-Ryzen)">
             <option value="old-intel-1">Intel Core 2 Duo / Quad, Pentium, Celeron</option>
@@ -648,9 +660,15 @@
             <option value="rx-7900">RX 7900 XT / XTX</option>
             <option value="rx-9070">RX 9060 XT / 9070 (XT)</option>
           </optgroup>
-          <optgroup label="Integrada / portátil">
+          <optgroup label="Integrada (portátil no-gaming)">
             <option value="integrada">Gráfica integrada débil (Intel Iris Xe, AMD básica)</option>
-            <option value="rdna2-apu">GPU integrada RDNA 2/3 (Steam Deck, portátiles AMD APU)</option>
+          </optgroup>
+          <optgroup label="APU portátil (handhelds)" data-handheld="1" hidden>
+            <option value="rdna2-apu">RDNA 2 8CU (Steam Deck)</option>
+            <option value="rdna2-680m">RDNA 2 12CU / Radeon 680M (GPD Win 4 6800U)</option>
+            <option value="rdna3-740m">RDNA 3 4CU / Radeon 740M (ROG Ally Z1 base)</option>
+            <option value="rdna3-780m">RDNA 3 12CU / Radeon 780M (ROG Ally Extreme, Legion Go, GPD Win 4 7840U/7640U/8840U)</option>
+            <option value="rdna35-890m">RDNA 3.5 16CU / Radeon 890M (GPD Win 4 HX 370)</option>
           </optgroup>
           <optgroup label="NVIDIA GeForce (series 400-900, antiguas)">
             <option value="gtx-old-tier1">GTX 460 / 560 / 650 (Ti) / 660 (Ti) / 670 / 680 / 750 / 760 / 770 / 950 / 960 / GT 610-740 / GTS 450 / 8800 GT</option>
@@ -683,6 +701,7 @@
           <option value="early_access">Acceso anticipado</option>
           <option value="adventure">Aventura</option>
           <option value="arpg">ARPG (Acción RPG)</option>
+          <option value="autochess">Auto Chess</option>
           <option value="battleroyale">Battle Royale</option>
           <option value="beatemup">Beat &apos;em Up</option>
           <option value="casual">Casual</option>
@@ -732,6 +751,7 @@
           <option value="early_access">Acceso anticipado</option>
           <option value="adventure">Aventura</option>
           <option value="arpg">ARPG (Acción RPG)</option>
+          <option value="autochess">Auto Chess</option>
           <option value="battleroyale">Battle Royale</option>
           <option value="beatemup">Beat &apos;em Up</option>
           <option value="casual">Casual</option>
@@ -781,6 +801,7 @@
           <option value="early_access">Acceso anticipado</option>
           <option value="adventure">Aventura</option>
           <option value="arpg">ARPG (Acción RPG)</option>
+          <option value="autochess">Auto Chess</option>
           <option value="battleroyale">Battle Royale</option>
           <option value="beatemup">Beat &apos;em Up</option>
           <option value="casual">Casual</option>
@@ -830,6 +851,7 @@
           <option value="early_access">Acceso anticipado</option>
           <option value="adventure">Aventura</option>
           <option value="arpg">ARPG (Acción RPG)</option>
+          <option value="autochess">Auto Chess</option>
           <option value="battleroyale">Battle Royale</option>
           <option value="beatemup">Beat &apos;em Up</option>
           <option value="casual">Casual</option>
@@ -997,6 +1019,7 @@
     'amd-r7-1': 4, 'amd-r7-2': 6,
     'amd-r9-1': 7, 'amd-r9-2': 9,
     'apu-zen2-deck': 4,
+    'apu-z1extreme': 6, 'apu-z1': 5, 'apu-6800u': 5, 'apu-7840u': 6, 'apu-8840u': 6, 'apu-hx370': 7,
     'old-intel-1': 1, 'old-amd-1': 1,
     'generic-dual': 2, 'generic-quad': 3,
   };
@@ -1014,17 +1037,38 @@
     'rx-7700': 5, 'rx-7800': 6, 'rx-7900': 8,
     'rx-9070': 6,
     'integrada': 1,
-    'rdna2-apu': 2,
+    'rdna2-apu': 2, 'rdna2-680m': 2, 'rdna3-740m': 1, 'rdna3-780m': 3, 'rdna35-890m': 4,
     'gtx-old-tier1': 1, 'gtx-970': 2, 'gtx-780': 2, 'gtx-980': 3,
     'rx-old-tier1': 1, 'r9-290': 2, 'r9-390': 3,
   };
 
-  /* ── Specs de dispositivos prefabricados (usando las claves del desplegable) ── */
-  const PREFABS = {
-    steamdeck: { cpu:'apu-zen2-deck',  ram:'16', gpu:'rdna2-apu' },
-    rogally:   { cpu:'amd-r7-2',  ram:'16', gpu:'gtx-1650'  },
-    legionGo:  { cpu:'amd-r7-2',  ram:'16', gpu:'gtx-1650'  },
-    gpd:       { cpu:'amd-r7-2',  ram:'16', gpu:'gtx-1650'  },
+  /* ── Specs de dispositivos prefabricados (usando las claves del desplegable) ──
+     Cada familia tiene, o bien un único "spec" (dispositivo con una sola
+     configuración de fábrica posible, como Steam Deck: LCD y OLED comparten
+     el mismo APU Zen 2 / RDNA2 de 8 CU, solo cambia el proceso de fabricación
+     — no el rendimiento), o una lista de "variantes" cuando el fabricante
+     vende de verdad chips distintos bajo el mismo nombre comercial. */
+  const PREFAB_FAMILIAS = {
+    steamdeck: {
+      spec: { cpu: 'apu-zen2-deck', ram: '16', gpu: 'rdna2-apu' },
+    },
+    rogally: {
+      variantes: [
+        { id: 'z1extreme', nombre: 'Z1 Extreme (modelo superior, 8 núcleos / 12 CU)', spec: { cpu: 'apu-z1extreme', ram: '16', gpu: 'rdna3-780m' } },
+        { id: 'z1',        nombre: 'Z1 — sin "Extreme" (modelo base, 6 núcleos / 4 CU)', spec: { cpu: 'apu-z1',        ram: '16', gpu: 'rdna3-740m' } },
+      ],
+    },
+    legionGo: {
+      spec: { cpu: 'apu-z1extreme', ram: '16', gpu: 'rdna3-780m' },
+    },
+    gpdwin4: {
+      variantes: [
+        { id: '6800u', nombre: 'Ryzen 7 6800U',            spec: { cpu: 'apu-6800u', ram: '16', gpu: 'rdna2-680m'  } },
+        { id: '7840u', nombre: 'Ryzen 7 7840U / 7640U',    spec: { cpu: 'apu-7840u', ram: '16', gpu: 'rdna3-780m'  } },
+        { id: '8840u', nombre: 'Ryzen 7 8840U',            spec: { cpu: 'apu-8840u', ram: '16', gpu: 'rdna3-780m'  } },
+        { id: 'hx370', nombre: 'Ryzen AI 9 HX 370',        spec: { cpu: 'apu-hx370', ram: '16', gpu: 'rdna35-890m' } },
+      ],
+    },
   };
 
   /* ── Texto del modal de ayuda (único, cubre CPU + GPU + RAM) ── */
@@ -1050,21 +1094,91 @@
   /* ── Helpers ── */
   function $(id) { return document.getElementById(id); }
 
-  function onPrefab() {
-    const val = $('prefab').value;
-    const locked = !!val;
-    ['cpu','ram','gpu'].forEach(id => { $(id).disabled = locked; });
-    if (val && PREFABS[val]) {
-      const p = PREFABS[val];
-      $('cpu').value = p.cpu;
-      $('ram').value = p.ram;
-      $('gpu').value = p.gpu;
+  /* Oculta todas las <option> de un <select> salvo la que coincide con
+     "value", y oculta también cualquier <optgroup> que se quede sin
+     opciones visibles. Así el desplegable queda "limitado" a la única
+     opción posible para el dispositivo elegido, en vez de deshabilitado. */
+  function limitSelectToValue(selectId, value) {
+    const sel = $(selectId);
+    sel.querySelectorAll('option').forEach(opt => {
+      opt.hidden = (opt.value !== value);
+    });
+    sel.querySelectorAll('optgroup').forEach(og => {
+      const visible = Array.from(og.querySelectorAll('option')).some(o => !o.hidden);
+      og.hidden = !visible;
+    });
+    sel.value = value;
+  }
+
+  /* Restaura la lista de opciones "modo PC de sobremesa": se ven todas
+     las opciones normales, pero el grupo de APUs de handheld se mantiene
+     oculto para no confundir a quien está montando un equipo de mesa. */
+  function restoreDesktopOptions(selectId) {
+    const sel = $(selectId);
+    sel.querySelectorAll('option').forEach(opt => { opt.hidden = false; });
+    sel.querySelectorAll('optgroup').forEach(og => { og.hidden = false; });
+    const handheldGroup = sel.querySelector('optgroup[data-handheld]');
+    if (handheldGroup) handheldGroup.hidden = true;
+  }
+
+  function aplicarSpecPrefab(spec) {
+    if (spec) {
+      limitSelectToValue('cpu', spec.cpu);
+      limitSelectToValue('ram', spec.ram);
+      limitSelectToValue('gpu', spec.gpu);
+    } else {
+      restoreDesktopOptions('cpu');
+      restoreDesktopOptions('ram');
+      restoreDesktopOptions('gpu');
+      $('cpu').value = '';
+      $('ram').value = '';
+      $('gpu').value = '';
     }
+  }
+
+  function onPrefabFamilia() {
+    const val = $('prefab').value;
+    const familia = PREFAB_FAMILIAS[val];
+    const filaVariante = $('prefabVarianteRow');
+    const selVariante = $('prefabVariante');
+
+    if (!familia) {
+      // "— Elige o configura abajo —": sin dispositivo, vuelve a modo manual
+      filaVariante.style.display = 'none';
+      selVariante.innerHTML = '';
+      aplicarSpecPrefab(null);
+      return;
+    }
+
+    if (familia.variantes) {
+      // Dispositivo con varios chips reales (p.ej. ROG Ally Z1/Z1 Extreme):
+      // mostramos el segundo desplegable y esperamos a que elija uno.
+      selVariante.innerHTML = '<option value="">— Elige el modelo/chip —</option>' +
+        familia.variantes.map(v => `<option value="${v.id}">${v.nombre}</option>`).join('');
+      filaVariante.style.display = 'flex';
+      aplicarSpecPrefab(null);
+    } else {
+      // Dispositivo con una única configuración de fábrica: se aplica
+      // directamente, sin pedir un segundo paso.
+      filaVariante.style.display = 'none';
+      selVariante.innerHTML = '';
+      aplicarSpecPrefab(familia.spec);
+    }
+  }
+
+  function onPrefabVariante() {
+    const familia = PREFAB_FAMILIAS[$('prefab').value];
+    const variante = familia && familia.variantes && familia.variantes.find(v => v.id === $('prefabVariante').value);
+    aplicarSpecPrefab(variante ? variante.spec : null);
   }
 
   function syncSelects() {
     $('prefab').value = '';
-    ['cpu','ram','gpu'].forEach(id => { $(id).disabled = false; });
+    $('prefabVarianteRow').style.display = 'none';
+    $('prefabVariante').innerHTML = '';
+    restoreDesktopOptions('cpu');
+    restoreDesktopOptions('ram');
+    restoreDesktopOptions('gpu');
   }
 
   /* ── Lógica de búsqueda ── */
@@ -1102,7 +1216,7 @@
   /* ── Renderizado ── */
     function genreName(g) {
     const map = {
-      action:'Acción', adventure:'Aventura', arpg:'ARPG',
+      action:'Acción', adventure:'Aventura', arpg:'ARPG', autochess:'Auto Chess',
       battleroyale:'Battle Royale', beatemup:"Beat 'em Up",
       cardgame:'Juego de cartas', casual:'Casual',
       citybuilder:'City Builder', early_access:'Acceso anticipado',
