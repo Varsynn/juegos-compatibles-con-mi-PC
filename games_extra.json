@@ -422,7 +422,7 @@
     "id": 90012,
     "title": "Teamfight Tactics",
     "desc": "El auto battler de Riot Games basado en el universo de League of Legends. Forma equipos de campeones, sitúalos en el tablero y observa cómo combaten solos. Temporadas con nuevos sets y mecánicas.",
-    "thumb": "https://images.igdb.com/igdb/image/upload/t_720p/co4hk8.webp",
+    "thumb": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8jux.webp",
     "url": "https://teamfighttactics.leagueoflegends.com",
     "min": {
       "cpu": 1,
@@ -451,8 +451,8 @@
     "id": 90013,
     "title": "Auto Chess",
     "desc": "El auto battler que popularizó el género, desarrollado por Drodo Studio. Posiciona piezas de fantasy en un tablero de ajedrez y combina razas y clases para crear sinergias ganadoras.",
-    "thumb": "https://cdn.akamai.steamstatic.com/steam/apps/1073320/header.jpg",
-    "url": "https://store.steampowered.com/app/1073320/Auto_Chess/",
+    "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1530300/header.jpg",
+    "url": "https://store.steampowered.com/app/1530300/Auto_Chess/",
     "min": {
       "cpu": 1,
       "ram": 2,
@@ -509,7 +509,7 @@
     "id": 90015,
     "title": "Legends of Runeterra",
     "desc": "Juego de cartas gratuito de Riot Games ambientado en el universo de League of Legends. Incluye el modo Campeones de Runaterra, una modalidad autochess con campeones que se colocan en tablero.",
-    "thumb": "https://images.igdb.com/igdb/image/upload/t_720p/co2l7z.webp",
+    "thumb": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3wnv.webp",
     "url": "https://playruneterra.com",
     "min": {
       "cpu": 1,
@@ -524,7 +524,6 @@
     "genres": [
       "cardgame",
       "strategy",
-      "autochess",
       "fantasy"
     ],
     "multi": [
@@ -540,7 +539,7 @@
     "id": 90016,
     "title": "Hearthstone Battlegrounds",
     "desc": "El modo auto battler de Hearthstone: 8 jugadores compran y venden esbirros cada turno para crear el tablero más fuerte. Gratuito dentro del cliente de Hearthstone.",
-    "thumb": "https://images.igdb.com/igdb/image/upload/t_720p/co6cl9.webp",
+    "thumb": "https://images.igdb.com/igdb/image/upload/t_cover_big/coa7ti.webp",
     "url": "https://hearthstone.blizzard.com/es-es/battlegrounds",
     "min": {
       "cpu": 1,
