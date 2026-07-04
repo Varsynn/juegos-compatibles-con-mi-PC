@@ -48,11 +48,15 @@
       pointer-events: none;
     }
 
-    /* ── Enlace al calendario (top-left) ── */
+    /* ── Navegación entre webs ── */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
+    }
     .nav-back {
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -62,6 +66,7 @@
       transition: color 0.15s;
     }
     .nav-back:hover { color: var(--text); }
+    .nav-sep { color: var(--text-muted); font-size: 13px; }
 
     /* ── Pre-header: redes, Epic, Eneba ── */
     .pre-header {
@@ -537,17 +542,17 @@
 
   <div id="visit-counter" class="visit-counter"></div>
 
- <div class="nav-links">
-    <a href="https://varsynn.github.io/calendario/" class="nav-back" target="_self">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-      Calendario de lanzamientos
-    </a>
-    <span class="nav-sep">·</span>
-    <a href="https://varsynn.github.io/buscador/" class="nav-back" target="_self">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-      ¿Puede mi PC correrlo?
-    </a>
-  </div>
+<div class="nav-links">
+  <a href="https://varsynn.github.io/juegos-compatibles-con-mi-PC/" class="nav-back" target="_self">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    ¿Qué juego es compatible con mi PC?
+  </a>
+  <span class="nav-sep">·</span>
+  <a href="https://varsynn.github.io/buscador/" class="nav-back">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    ¿Puede mi PC correrlo?
+  </a>
+</div>
 
   
 
