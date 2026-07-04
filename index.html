@@ -1025,7 +1025,22 @@
           No se pudo cargar games.json ni progreso.json.<br>
           Comprueba que alguno de los dos archivos está en la misma carpeta que index.html.
         </div>`;
+      return;
     }
+
+    // games_extra.json: juegos curados a mano que no vienen de Steam
+    // (League of Legends, Valorant, Dota 2, TFT...). Se cargan siempre,
+    // independientemente de si vino de games.json o de progreso.json, y
+    // van los primeros en la lista. Si este archivo falla o no existe,
+    // no es un error grave — seguimos con lo que ya tenemos de Steam.
+    try {
+      const res = await fetch('games_extra.json');
+      if (res.ok) {
+        const extra = await res.json();
+        const extraArr = Array.isArray(extra) ? extra : Object.values(extra.juegos || extra);
+        GAMES = [...extraArr, ...GAMES];
+      }
+    } catch (_) {}
   }
   cargarJuegos();
 
