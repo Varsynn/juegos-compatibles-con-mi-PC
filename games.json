@@ -1597,9 +1597,9 @@
     "thumb": "https://cdn.akamai.steamstatic.com/steam/apps/1903340/header.jpg",
     "url": "https://store.steampowered.com/app/1903340",
     "min": {
-      "cpu": 4,
+      "cpu": 3,
       "ram": 8,
-      "gpu": 3,
+      "gpu": 2,
       "os": [
         "win10"
       ]
