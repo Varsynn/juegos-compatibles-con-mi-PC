@@ -302,24 +302,8 @@
       font-size: 16px; line-height: 1; padding: 2px 4px;
       border-radius: 6px; transition: background 0.15s, transform 0.1s;
     }
-    .btn-star { color: #f5c518; }
-    .btn-star:hover { background: rgba(245,197,24,0.12); transform: scale(1.2); }
     .btn-bubble { color: #666; font-size: 15px; }
     .btn-bubble:hover { background: rgba(255,255,255,0.06); color: #aaa; transform: scale(1.1); }
-
-    /* ── Badge Metacritic ── */
-    .mc-badge {
-      display: none;
-      font-size: 11px; font-weight: 700; letter-spacing: 0.02em;
-      padding: 2px 8px; border-radius: 99px;
-      border: 1px solid; white-space: nowrap;
-      animation: fadeIn 0.15s ease;
-    }
-    .mc-badge.mc-green  { background: rgba(62,207,142,0.12); color: #3ecf8e; border-color: rgba(62,207,142,0.3); }
-    .mc-badge.mc-yellow { background: rgba(245,197,24,0.12); color: #f5c518; border-color: rgba(245,197,24,0.3); }
-    .mc-badge.mc-red    { background: rgba(220,60,60,0.12);  color: #e05c5c; border-color: rgba(220,60,60,0.3);  }
-    .mc-badge.mc-gray   { background: rgba(150,150,150,0.1); color: #666;    border-color: rgba(150,150,150,0.2);}
-    @keyframes fadeIn { from { opacity:0; transform:scale(0.85); } to { opacity:1; transform:scale(1); } }
 
     /* ── Panel de comentarios ── */
     .comment-overlay {
@@ -1062,17 +1046,12 @@
             : `<span class="tag tag-fail">✗ Recomendados</span>`);
       }
 
-      const mcScore  = g.metacritic || 0;
-      const mcClass  = mcScore >= 75 ? 'mc-green' : mcScore >= 50 ? 'mc-yellow' : mcScore > 0 ? 'mc-red' : 'mc-gray';
-      const mcText   = mcScore > 0 ? `${mcScore}/100` : 'Sin datos';
       const safeId   = String(g.id);
       const safeTitle = (g.title || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
 
       return `
         <div class="game-card">
           <div class="card-actions">
-            <span class="mc-badge ${mcClass}" id="mc-${safeId}">${mcText}</span>
-            <button class="btn-star" onclick="toggleMeta('${safeId}')" title="Ver puntuación Metacritic">★</button>
             <button class="btn-bubble" onclick="openComments('${safeId}','${safeTitle}')" title="Ver comentarios de usuarios">💬</button>
           </div>
           <div class="game-thumb"><img src="${g.thumb}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:10px;" onerror="this.style.display='none'"></div>
@@ -1130,22 +1109,13 @@
     });
   }
   // ════════════════════════════════════════════════════════
-  // ESTRELLA METACRITIC
-  // ════════════════════════════════════════════════════════
-  function toggleMeta(id) {
-    const badge = document.getElementById('mc-' + id);
-    if (!badge) return;
-    badge.style.display = badge.style.display === 'inline-block' ? 'none' : 'inline-block';
-  }
-
-  // ════════════════════════════════════════════════════════
   // COMENTARIOS — Supabase
   //
   // Para BORRAR comentarios: entra en https://supabase.com
   // → Tu proyecto → Table Editor → tabla "comentarios"
   // y borra la fila directamente desde el dashboard.
   // ════════════════════════════════════════════════════════
-  const SUPA_URL  = 'https://uqvyjgtdcgbznnvcwwit.supabase.co/rest/v1/';   // ← tu URL
+  const SUPA_URL  = 'https://uqvyjgtdcgbznnvcwwit.supabase.co';   // ← tu URL
   const SUPA_ANON = 'sb_publishable_bHLlipQ84sBu7E6PEH9yDQ_zBhSB5WM';         // ← Publishable key
 
   let currentGameId = null;
