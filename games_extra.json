@@ -5,10 +5,34 @@
     "desc": "El MOBA competitivo más jugado del mundo. Dos equipos de 5 campeones se enfrentan para destruir la base enemiga.",
     "thumb": "https://images.igdb.com/igdb/image/upload/t_720p/ar57ov.webp",
     "url": "https://www.leagueoflegends.com",
-    "min": { "cpu": 3, "ram": 8, "gpu": 1, "os": ["win10", "win11", "mac"] },
-    "rec": { "cpu": 5, "ram": 16, "gpu": 2, "os": ["win10", "win11", "mac"] },
-    "genres": ["moba", "strategy", "action"],
-    "multi": ["pvp"],
+    "min": {
+      "cpu": 3,
+      "ram": 8,
+      "gpu": 1,
+      "os": [
+        "win10",
+        "win11",
+        "mac"
+      ]
+    },
+    "rec": {
+      "cpu": 5,
+      "ram": 16,
+      "gpu": 2,
+      "os": [
+        "win10",
+        "win11",
+        "mac"
+      ]
+    },
+    "genres": [
+      "moba",
+      "strategy",
+      "action"
+    ],
+    "multi": [
+      "pvp"
+    ],
     "metacritic": 78,
     "release": "27 OCT 2009",
     "spanish": true,
@@ -20,10 +44,31 @@
     "desc": "Shooter táctico 5v5 de Riot Games con agentes de habilidades únicas. Precisión, estrategia y trabajo en equipo.",
     "thumb": "https://images.igdb.com/igdb/image/upload/t_720p/ar4p46.webp",
     "url": "https://playvalorant.com",
-    "min": { "cpu": 1, "ram": 4, "gpu": 1, "os": ["win10", "win11"] },
-    "rec": { "cpu": 3, "ram": 8, "gpu": 1, "os": ["win10", "win11"] },
-    "genres": ["fps", "action"],
-    "multi": ["pvp"],
+    "min": {
+      "cpu": 1,
+      "ram": 4,
+      "gpu": 1,
+      "os": [
+        "win10",
+        "win11"
+      ]
+    },
+    "rec": {
+      "cpu": 3,
+      "ram": 8,
+      "gpu": 1,
+      "os": [
+        "win10",
+        "win11"
+      ]
+    },
+    "genres": [
+      "fps",
+      "action"
+    ],
+    "multi": [
+      "pvp"
+    ],
     "metacritic": 80,
     "release": "2 JUN 2020",
     "spanish": true,
@@ -35,10 +80,32 @@
     "desc": "Hero shooter de Blizzard con modos PvP y PvE. Más de 30 héroes con habilidades únicas en partidas 5v5.",
     "thumb": "https://images.igdb.com/igdb/image/upload/t_cover_big/co9f5l.webp",
     "url": "https://overwatch.blizzard.com",
-    "min": { "cpu": 3, "ram": 8, "gpu": 2, "os": ["win10", "win11"] },
-    "rec": { "cpu": 5, "ram": 8, "gpu": 4, "os": ["win10", "win11"] },
-    "genres": ["fps", "action"],
-    "multi": ["pvp", "coop"],
+    "min": {
+      "cpu": 3,
+      "ram": 8,
+      "gpu": 2,
+      "os": [
+        "win10",
+        "win11"
+      ]
+    },
+    "rec": {
+      "cpu": 5,
+      "ram": 8,
+      "gpu": 4,
+      "os": [
+        "win10",
+        "win11"
+      ]
+    },
+    "genres": [
+      "fps",
+      "action"
+    ],
+    "multi": [
+      "pvp",
+      "coop"
+    ],
     "metacritic": 83,
     "release": "4 OCT 2022",
     "spanish": true,
@@ -50,10 +117,35 @@
     "desc": "RPG de acción en mundo abierto con sistema gacha. Explora Teyvat con más de 80 personajes jugables.",
     "thumb": "https://images.igdb.com/igdb/image/upload/t_720p/ar4lxl.webp",
     "url": "https://genshin.hoyoverse.com",
-    "min": { "cpu": 3, "ram": 8, "gpu": 1, "os": ["win10", "win11"] },
-    "rec": { "cpu": 4, "ram": 16, "gpu": 3, "os": ["win10", "win11"] },
-    "genres": ["rpg", "arpg", "openworld", "gacha", "fantasy"],
-    "multi": ["solo", "coop"],
+    "min": {
+      "cpu": 3,
+      "ram": 8,
+      "gpu": 1,
+      "os": [
+        "win10",
+        "win11"
+      ]
+    },
+    "rec": {
+      "cpu": 4,
+      "ram": 16,
+      "gpu": 3,
+      "os": [
+        "win10",
+        "win11"
+      ]
+    },
+    "genres": [
+      "rpg",
+      "arpg",
+      "openworld",
+      "gacha",
+      "fantasy"
+    ],
+    "multi": [
+      "solo",
+      "coop"
+    ],
     "metacritic": 84,
     "release": "28 SEP 2020",
     "spanish": false,
@@ -65,10 +157,34 @@
     "desc": "RPG por turnos gacha de HoYoverse. Viaja por el cosmos en el Expreso Astral resolviendo misterios galácticos.",
     "thumb": "https://images.igdb.com/igdb/image/upload/t_720p/ar4lxm.webp",
     "url": "https://hsr.hoyoverse.com",
-    "min": { "cpu": 1, "ram": 8, "gpu": 1, "os": ["win10", "win11"] },
-    "rec": { "cpu": 4, "ram": 8, "gpu": 2, "os": ["win10", "win11"] },
-    "genres": ["jrpg", "rpg", "strategy", "gacha", "scifi"],
-    "multi": ["solo"],
+    "min": {
+      "cpu": 1,
+      "ram": 8,
+      "gpu": 1,
+      "os": [
+        "win10",
+        "win11"
+      ]
+    },
+    "rec": {
+      "cpu": 4,
+      "ram": 8,
+      "gpu": 2,
+      "os": [
+        "win10",
+        "win11"
+      ]
+    },
+    "genres": [
+      "jrpg",
+      "rpg",
+      "strategy",
+      "gacha",
+      "scifi"
+    ],
+    "multi": [
+      "solo"
+    ],
     "metacritic": 87,
     "release": "26 ABR 2023",
     "spanish": false,
@@ -80,10 +196,35 @@
     "desc": "RPG de acción gacha en mundo abierto de Kuro Games. Sistema de combate fluido con personajes Resonadores.",
     "thumb": "https://images.igdb.com/igdb/image/upload/t_720p/ar57q0.webp",
     "url": "https://wutheringwaves.kurogames.com",
-    "min": { "cpu": 3, "ram": 16, "gpu": 2, "os": ["win10", "win11"] },
-    "rec": { "cpu": 4, "ram": 16, "gpu": 3, "os": ["win10", "win11"] },
-    "genres": ["arpg", "rpg", "openworld", "gacha", "action"],
-    "multi": ["solo", "coop"],
+    "min": {
+      "cpu": 3,
+      "ram": 16,
+      "gpu": 2,
+      "os": [
+        "win10",
+        "win11"
+      ]
+    },
+    "rec": {
+      "cpu": 4,
+      "ram": 16,
+      "gpu": 3,
+      "os": [
+        "win10",
+        "win11"
+      ]
+    },
+    "genres": [
+      "arpg",
+      "rpg",
+      "openworld",
+      "gacha",
+      "action"
+    ],
+    "multi": [
+      "solo",
+      "coop"
+    ],
     "metacritic": 0,
     "release": "22 MAY 2024",
     "spanish": false,
@@ -95,10 +236,33 @@
     "desc": "Battle royale gratuito de Epic Games con construcción de estructuras. Temporadas con colaboraciones masivas.",
     "thumb": "https://images.igdb.com/igdb/image/upload/t_720p/ar4g5g.webp",
     "url": "https://www.fortnite.com",
-    "min": { "cpu": 3, "ram": 8, "gpu": 1, "os": ["win10", "win11"] },
-    "rec": { "cpu": 5, "ram": 16, "gpu": 3, "os": ["win10", "win11"] },
-    "genres": ["battleroyale", "action", "sandbox"],
-    "multi": ["pvp", "coop"],
+    "min": {
+      "cpu": 3,
+      "ram": 8,
+      "gpu": 1,
+      "os": [
+        "win10",
+        "win11"
+      ]
+    },
+    "rec": {
+      "cpu": 5,
+      "ram": 16,
+      "gpu": 3,
+      "os": [
+        "win10",
+        "win11"
+      ]
+    },
+    "genres": [
+      "battleroyale",
+      "action",
+      "sandbox"
+    ],
+    "multi": [
+      "pvp",
+      "coop"
+    ],
     "metacritic": 81,
     "release": "25 JUL 2017",
     "spanish": true,
@@ -110,10 +274,33 @@
     "desc": "Fútbol con coches propulsados por cohetes. Competitivo y accesible, con un techo de habilidad altísimo.",
     "thumb": "https://images.igdb.com/igdb/image/upload/t_720p/ar4p8c.webp",
     "url": "https://www.rocketleague.com",
-    "min": { "cpu": 1, "ram": 4, "gpu": 1, "os": ["win10", "win11"] },
-    "rec": { "cpu": 3, "ram": 8, "gpu": 2, "os": ["win10", "win11"] },
-    "genres": ["sports", "racing", "action"],
-    "multi": ["pvp", "coop"],
+    "min": {
+      "cpu": 1,
+      "ram": 4,
+      "gpu": 1,
+      "os": [
+        "win10",
+        "win11"
+      ]
+    },
+    "rec": {
+      "cpu": 3,
+      "ram": 8,
+      "gpu": 2,
+      "os": [
+        "win10",
+        "win11"
+      ]
+    },
+    "genres": [
+      "sports",
+      "racing",
+      "action"
+    ],
+    "multi": [
+      "pvp",
+      "coop"
+    ],
     "metacritic": 86,
     "release": "7 JUL 2015",
     "spanish": true,
@@ -125,10 +312,38 @@
     "desc": "El juego de construcción y supervivencia en mundo abierto más vendido de la historia. Sandbox sin límites.",
     "thumb": "https://images.igdb.com/igdb/image/upload/t_720p/ar4nm6.webp",
     "url": "https://www.minecraft.net",
-    "min": { "cpu": 3, "ram": 8, "gpu": 1, "os": ["win10", "win11", "mac", "linux"] },
-    "rec": { "cpu": 5, "ram": 16, "gpu": 3, "os": ["win10", "win11", "mac", "linux"] },
-    "genres": ["sandbox", "survival", "adventure"],
-    "multi": ["solo", "coop", "pvp"],
+    "min": {
+      "cpu": 3,
+      "ram": 8,
+      "gpu": 1,
+      "os": [
+        "win10",
+        "win11",
+        "mac",
+        "linux"
+      ]
+    },
+    "rec": {
+      "cpu": 5,
+      "ram": 16,
+      "gpu": 3,
+      "os": [
+        "win10",
+        "win11",
+        "mac",
+        "linux"
+      ]
+    },
+    "genres": [
+      "sandbox",
+      "survival",
+      "adventure"
+    ],
+    "multi": [
+      "solo",
+      "coop",
+      "pvp"
+    ],
     "metacritic": 93,
     "release": "18 NOV 2011",
     "spanish": true,
@@ -140,13 +355,215 @@
     "desc": "Juego de cartas digital de Blizzard ambientado en el universo de Warcraft. Estrategia, mazos y duelistas.",
     "thumb": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1sh2.webp",
     "url": "https://hearthstone.blizzard.com",
-    "min": { "cpu": 1, "ram": 4, "gpu": 1, "os": ["win10", "win11", "mac"] },
-    "rec": { "cpu": 2, "ram": 4, "gpu": 1, "os": ["win10", "win11", "mac"] },
-    "genres": ["strategy", "casual"],
-    "multi": ["solo", "pvp"],
+    "min": {
+      "cpu": 1,
+      "ram": 4,
+      "gpu": 1,
+      "os": [
+        "win10",
+        "win11",
+        "mac"
+      ]
+    },
+    "rec": {
+      "cpu": 2,
+      "ram": 4,
+      "gpu": 1,
+      "os": [
+        "win10",
+        "win11",
+        "mac"
+      ]
+    },
+    "genres": [
+      "strategy",
+      "casual"
+    ],
+    "multi": [
+      "solo",
+      "pvp"
+    ],
     "metacritic": 88,
     "release": "11 MAR 2014",
     "spanish": true,
     "owners": "50,000,000+"
+  },
+  {
+    "id": 90011,
+    "title": "Dota 2",
+    "desc": "El MOBA de Valve con más profundidad táctica del mercado. Más de 120 héroes, cada partida es única. Origen del género autochess a través del mod Dota Auto Chess.",
+    "thumb": "https://cdn.akamai.steamstatic.com/steam/apps/570/header.jpg",
+    "url": "https://store.steampowered.com/app/570/Dota_2/",
+    "min": {
+      "cpu": 1,
+      "ram": 4,
+      "gpu": 1
+    },
+    "rec": {
+      "cpu": 3,
+      "ram": 8,
+      "gpu": 2
+    },
+    "genres": [
+      "moba",
+      "action",
+      "strategy",
+      "autochess"
+    ],
+    "multi": [
+      "pvp"
+    ],
+    "metacritic": 90,
+    "release": "9 JUL 2013",
+    "spanish": true,
+    "owners": "100,000,000+"
+  },
+  {
+    "id": 90012,
+    "title": "Teamfight Tactics",
+    "desc": "El auto battler de Riot Games basado en el universo de League of Legends. Forma equipos de campeones, sitúalos en el tablero y observa cómo combaten solos. Temporadas con nuevos sets y mecánicas.",
+    "thumb": "https://images.igdb.com/igdb/image/upload/t_720p/co4hk8.webp",
+    "url": "https://teamfighttactics.leagueoflegends.com",
+    "min": {
+      "cpu": 1,
+      "ram": 4,
+      "gpu": 1
+    },
+    "rec": {
+      "cpu": 2,
+      "ram": 8,
+      "gpu": 1
+    },
+    "genres": [
+      "autochess",
+      "strategy",
+      "casual"
+    ],
+    "multi": [
+      "pvp"
+    ],
+    "metacritic": 0,
+    "release": "26 JUN 2019",
+    "spanish": true,
+    "owners": "33,000,000+"
+  },
+  {
+    "id": 90013,
+    "title": "Auto Chess",
+    "desc": "El auto battler que popularizó el género, desarrollado por Drodo Studio. Posiciona piezas de fantasy en un tablero de ajedrez y combina razas y clases para crear sinergias ganadoras.",
+    "thumb": "https://cdn.akamai.steamstatic.com/steam/apps/1073320/header.jpg",
+    "url": "https://store.steampowered.com/app/1073320/Auto_Chess/",
+    "min": {
+      "cpu": 1,
+      "ram": 2,
+      "gpu": 1
+    },
+    "rec": {
+      "cpu": 2,
+      "ram": 4,
+      "gpu": 1
+    },
+    "genres": [
+      "autochess",
+      "strategy",
+      "casual"
+    ],
+    "multi": [
+      "pvp"
+    ],
+    "metacritic": 0,
+    "release": "31 ENE 2020",
+    "spanish": false,
+    "owners": "5,000,000+"
+  },
+  {
+    "id": 90014,
+    "title": "Mechabellum",
+    "desc": "Auto battler de ciencia ficción en el que programas ejércitos de mechas antes de cada combate. Sin microgestión durante la batalla: la estrategia previa lo decide todo.",
+    "thumb": "https://cdn.akamai.steamstatic.com/steam/apps/669330/header.jpg",
+    "url": "https://store.steampowered.com/app/669330/Mechabellum/",
+    "min": {
+      "cpu": 3,
+      "ram": 8,
+      "gpu": 1
+    },
+    "rec": {
+      "cpu": 5,
+      "ram": 16,
+      "gpu": 2
+    },
+    "genres": [
+      "autochess",
+      "strategy",
+      "scifi"
+    ],
+    "multi": [
+      "pvp"
+    ],
+    "metacritic": 79,
+    "release": "5 SEP 2023",
+    "spanish": false,
+    "owners": "500,000+"
+  },
+  {
+    "id": 90015,
+    "title": "Legends of Runeterra",
+    "desc": "Juego de cartas gratuito de Riot Games ambientado en el universo de League of Legends. Incluye el modo Campeones de Runaterra, una modalidad autochess con campeones que se colocan en tablero.",
+    "thumb": "https://images.igdb.com/igdb/image/upload/t_720p/co2l7z.webp",
+    "url": "https://playruneterra.com",
+    "min": {
+      "cpu": 1,
+      "ram": 4,
+      "gpu": 1
+    },
+    "rec": {
+      "cpu": 2,
+      "ram": 8,
+      "gpu": 1
+    },
+    "genres": [
+      "cardgame",
+      "strategy",
+      "autochess",
+      "fantasy"
+    ],
+    "multi": [
+      "solo",
+      "pvp"
+    ],
+    "metacritic": 82,
+    "release": "30 ABR 2020",
+    "spanish": true,
+    "owners": "10,000,000+"
+  },
+  {
+    "id": 90016,
+    "title": "Hearthstone Battlegrounds",
+    "desc": "El modo auto battler de Hearthstone: 8 jugadores compran y venden esbirros cada turno para crear el tablero más fuerte. Gratuito dentro del cliente de Hearthstone.",
+    "thumb": "https://images.igdb.com/igdb/image/upload/t_720p/co6cl9.webp",
+    "url": "https://hearthstone.blizzard.com/es-es/battlegrounds",
+    "min": {
+      "cpu": 1,
+      "ram": 4,
+      "gpu": 1
+    },
+    "rec": {
+      "cpu": 2,
+      "ram": 4,
+      "gpu": 1
+    },
+    "genres": [
+      "autochess",
+      "strategy",
+      "casual",
+      "cardgame"
+    ],
+    "multi": [
+      "pvp"
+    ],
+    "metacritic": 0,
+    "release": "1 NOV 2019",
+    "spanish": true,
+    "owners": "15,000,000+"
   }
 ]
