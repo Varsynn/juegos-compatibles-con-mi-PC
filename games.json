@@ -10561,7 +10561,7 @@
     "min": {
       "cpu": 1,
       "ram": 2,
-      "gpu": 3,
+      "gpu": 1,
       "os": [
         "winxp",
         "winvista",
@@ -10569,9 +10569,9 @@
       ]
     },
     "rec": {
-      "cpu": 2,
+      "cpu": 1,
       "ram": 2,
-      "gpu": 5,
+      "gpu": 1,
       "os": [
         "winxp",
         "winvista",
