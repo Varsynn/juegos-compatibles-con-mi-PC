@@ -564,5 +564,67 @@
     "release": "1 NOV 2019",
     "spanish": true,
     "owners": "15,000,000+"
+  },
+  {
+    "id": 90017,
+    "title": "Kingdom Hearts III + Re Mind",
+    "desc": "El cierre de la saga Xehanort. Sora, Donald y Goofy viajan a nuevos mundos Disney y Pixar para la batalla final. Incluye el DLC Re Mind.",
+    "thumb": "https://cdn.akamai.steamstatic.com/steam/apps/2552450/header.jpg",
+    "url": "https://store.steampowered.com/app/2552450/KINGDOM_HEARTS_III__Re_Mind_DLC/",
+    "min": {
+      "cpu": 3,
+      "ram": 8,
+      "gpu": 1
+    },
+    "rec": {
+      "cpu": 3,
+      "ram": 8,
+      "gpu": 3
+    },
+    "genres": [
+      "action",
+      "adventure",
+      "rpg",
+      "jrpg",
+      "fantasy"
+    ],
+    "multi": [
+      "solo"
+    ],
+    "metacritic": 84,
+    "release": "13 JUN 2024",
+    "spanish": true,
+    "owners": "100,000+"
+  },
+  {
+    "id": 90018,
+    "title": "Kingdom Hearts HD 2.8 Final Chapter Prologue",
+    "desc": "Recopilación con Dream Drop Distance HD, la película Back Cover y el episodio jugable 0.2 Birth by Sleep, puente narrativo hacia Kingdom Hearts III.",
+    "thumb": "https://cdn.akamai.steamstatic.com/steam/apps/2552440/header.jpg",
+    "url": "https://store.steampowered.com/app/2552440/KINGDOM_HEARTS_HD_28_Final_Chapter_Prologue/",
+    "min": {
+      "cpu": 3,
+      "ram": 8,
+      "gpu": 1
+    },
+    "rec": {
+      "cpu": 3,
+      "ram": 8,
+      "gpu": 3
+    },
+    "genres": [
+      "action",
+      "adventure",
+      "rpg",
+      "jrpg",
+      "fantasy"
+    ],
+    "multi": [
+      "solo"
+    ],
+    "metacritic": 76,
+    "release": "13 JUN 2024",
+    "spanish": true,
+    "owners": "80,000+"
   }
 ]
