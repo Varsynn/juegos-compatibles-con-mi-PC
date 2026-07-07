@@ -543,9 +543,9 @@
   <div id="visit-counter" class="visit-counter"></div>
 
 <div class="nav-links">
-  <a href="https://varsynn.github.io/juegos-compatibles-con-mi-PC/" class="nav-back" target="_self">
+  <a href="https://varsynn.github.io/calendario/" class="nav-back" target="_self">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-    ¿Qué juego es compatible con mi PC?
+    Calendario de lanzamientos
   </a>
   <span class="nav-sep">·</span>
   <a href="https://varsynn.github.io/buscador/" class="nav-back">
@@ -622,16 +622,21 @@
         <select id="cpu" onchange="syncSelects()">
           <option value="">Cualquier CPU</option>
           <optgroup label="Intel Core i3">
-            <option value="intel-i3-1">i3 (1ª a 9ª gen)</option>
+            <option value="intel-i3-1">i3 (1ª a 7ª gen)</option>
+            <option value="intel-i3-1b">i3 (8ª a 9ª gen)</option>
             <option value="intel-i3-2">i3 (10ª gen o superior)</option>
           </optgroup>
           <optgroup label="Intel Core i5">
-            <option value="intel-i5-1">i5 (1ª a 9ª gen)</option>
+            <option value="intel-i5-1">i5 (1ª a 4ª gen)</option>
+            <option value="intel-i5-1b">i5 (6ª a 7ª gen)</option>
+            <option value="intel-i5-1c">i5 (8ª a 9ª gen)</option>
             <option value="intel-i5-2">i5 (10ª a 12ª gen)</option>
             <option value="intel-i5-3">i5 (13ª gen o superior)</option>
           </optgroup>
           <optgroup label="Intel Core i7">
-            <option value="intel-i7-1">i7 (1ª a 9ª gen)</option>
+            <option value="intel-i7-1">i7 (1ª a 4ª gen)</option>
+            <option value="intel-i7-1b">i7 (6ª a 7ª gen)</option>
+            <option value="intel-i7-1c">i7 (8ª a 9ª gen)</option>
             <option value="intel-i7-2">i7 (10ª a 12ª gen)</option>
             <option value="intel-i7-3">i7 (13ª gen o superior)</option>
           </optgroup>
@@ -643,15 +648,18 @@
             <option value="amd-r3-1">Ryzen 3 (cualquier serie)</option>
           </optgroup>
           <optgroup label="AMD Ryzen 5">
-            <option value="amd-r5-1">Ryzen 5 (serie 1000-3000)</option>
+            <option value="amd-r5-1">Ryzen 5 (serie 1000-2000)</option>
+            <option value="amd-r5-1b">Ryzen 5 (serie 3000)</option>
             <option value="amd-r5-2">Ryzen 5 (serie 5000 o superior)</option>
           </optgroup>
           <optgroup label="AMD Ryzen 7">
-            <option value="amd-r7-1">Ryzen 7 (serie 1000-3000)</option>
+            <option value="amd-r7-1">Ryzen 7 (serie 1000-2000)</option>
+            <option value="amd-r7-1b">Ryzen 7 (serie 3000)</option>
             <option value="amd-r7-2">Ryzen 7 (serie 5000 o superior)</option>
           </optgroup>
           <optgroup label="AMD Ryzen 9">
-            <option value="amd-r9-1">Ryzen 9 (serie 3000-5000)</option>
+            <option value="amd-r9-1">Ryzen 9 (serie 3000)</option>
+            <option value="amd-r9-1b">Ryzen 9 (serie 5000)</option>
             <option value="amd-r9-2">Ryzen 9 (serie 7000 o superior)</option>
           </optgroup>
           <optgroup label="APU portátil (handhelds)" data-handheld="1" hidden>
@@ -700,24 +708,31 @@
             <option value="gtx-1050">GTX 1050 / 1050 Ti</option>
             <option value="gtx-1060">GTX 1060</option>
             <option value="gtx-1070">GTX 1070 / 1070 Ti</option>
-            <option value="gtx-1080">GTX 1080 / 1080 Ti</option>
+            <option value="gtx-1080">GTX 1080</option>
+            <option value="gtx-1080ti">GTX 1080 Ti</option>
             <option value="gtx-1650">GTX 1650</option>
             <option value="gtx-1660">GTX 1660 / 1660 Super / Ti</option>
           </optgroup>
           <optgroup label="NVIDIA RTX 20/30">
             <option value="rtx-2060">RTX 2060</option>
-            <option value="rtx-2070">RTX 2070 / 2080</option>
+            <option value="rtx-2070">RTX 2070</option>
+            <option value="rtx-2080">RTX 2080</option>
+            <option value="rtx-2080ti">RTX 2080 Ti</option>
             <option value="rtx-3060">RTX 3060 / 3060 Ti</option>
             <option value="rtx-3070">RTX 3070 / 3070 Ti</option>
-            <option value="rtx-3080">RTX 3080 / 3080 Ti / 3090</option>
+            <option value="rtx-3080">RTX 3080 / 3080 Ti</option>
+            <option value="rtx-3090">RTX 3090 / 3090 Ti</option>
           </optgroup>
           <optgroup label="NVIDIA RTX 40/50">
             <option value="rtx-4060">RTX 4060 / 4060 Ti</option>
             <option value="rtx-4070">RTX 4070 / 4070 Ti / Super</option>
             <option value="rtx-4080">RTX 4080 / Super</option>
             <option value="rtx-4090">RTX 4090</option>
-            <option value="rtx-5070">RTX 5060 / 5070 / Ti</option>
-            <option value="rtx-5080">RTX 5080 / 5090</option>
+            <option value="rtx-5060">RTX 5060</option>
+            <option value="rtx-5070">RTX 5070</option>
+            <option value="rtx-5070ti">RTX 5070 Ti</option>
+            <option value="rtx-5080">RTX 5080</option>
+            <option value="rtx-5090">RTX 5090</option>
           </optgroup>
           <optgroup label="AMD Radeon RX">
             <option value="rx-580">RX 480 / 580 / 590</option>
@@ -726,10 +741,13 @@
             <option value="rx-6700">RX 6700 / 6700 XT / 6750 XT</option>
             <option value="rx-6800">RX 6800 / 6800 XT</option>
             <option value="rx-6900">RX 6900 XT / 6950 XT</option>
-            <option value="rx-7700">RX 7600 / 7700 XT</option>
+            <option value="rx-7600">RX 7600</option>
+            <option value="rx-7700">RX 7700 XT</option>
             <option value="rx-7800">RX 7800 XT / 7900 GRE</option>
-            <option value="rx-7900">RX 7900 XT / XTX</option>
-            <option value="rx-9070">RX 9060 XT / 9070 (XT)</option>
+            <option value="rx-7900xt">RX 7900 XT</option>
+            <option value="rx-7900xtx">RX 7900 XTX</option>
+            <option value="rx-9060xt">RX 9060 XT</option>
+            <option value="rx-9070">RX 9070 (XT)</option>
           </optgroup>
           <optgroup label="Integrada (portátil no-gaming)">
             <option value="integrada">Gráfica integrada débil (Intel Iris Xe, AMD básica)</option>
@@ -1061,34 +1079,44 @@
   /* ── Tabla de equivalencia: traduce la opción elegida en el desplegable
      a un nivel de potencia 1-10, EXACTAMENTE con los mismos rangos que
      se le indican a la IA en generar_games.py. Si cambias una tabla,
-     cambia también la otra para que sigan dando resultados coherentes. ── */
+     cambia también la otra para que sigan dando resultados coherentes.
+
+     ⚠️ ACTUALIZADO [fecha de esta revisión]: se ha aumentado la granularidad
+     de CPU_TIERS y GPU_TIERS para evitar que generaciones/gamas muy distintas
+     compartan el mismo valor (p. ej. antes un i5 de 1ª gen y uno de 9ª gen
+     puntuaban igual). Los valores nuevos se han elegido intentando no
+     desplazar demasiado la escala general, pero para que los juegos ya
+     presentes en games.json sean 100% coherentes con esta tabla hace falta
+     revisar/regenerar generar_games.py con esta misma tabla. Hasta entonces,
+     es posible que algún juego puntúe un pelín distinto a como lo hacía
+     antes — normalmente para mejor, que es justo lo que se buscaba. ── */
   const CPU_TIERS = {
-    'intel-i3-1': 1, 'intel-i3-2': 2,
-    'intel-i5-1': 3, 'intel-i5-2': 5, 'intel-i5-3': 6,
-    'intel-i7-1': 4, 'intel-i7-2': 6, 'intel-i7-3': 7,
+    'intel-i3-1': 1, 'intel-i3-1b': 2, 'intel-i3-2': 3,
+    'intel-i5-1': 2, 'intel-i5-1b': 3, 'intel-i5-1c': 4, 'intel-i5-2': 5, 'intel-i5-3': 6,
+    'intel-i7-1': 3, 'intel-i7-1b': 5, 'intel-i7-1c': 6, 'intel-i7-2': 7, 'intel-i7-3': 8,
     'intel-i9-1': 8, 'intel-i9-2': 9,
     'amd-r3-1': 1,
-    'amd-r5-1': 3, 'amd-r5-2': 5,
-    'amd-r7-1': 4, 'amd-r7-2': 6,
-    'amd-r9-1': 7, 'amd-r9-2': 9,
+    'amd-r5-1': 3, 'amd-r5-1b': 4, 'amd-r5-2': 5,
+    'amd-r7-1': 5, 'amd-r7-1b': 6, 'amd-r7-2': 7,
+    'amd-r9-1': 7, 'amd-r9-1b': 8, 'amd-r9-2': 9,
     'apu-zen2-deck': 4,
     'apu-z1extreme': 6, 'apu-z1': 5, 'apu-6800u': 5, 'apu-7840u': 6, 'apu-8840u': 6, 'apu-hx370': 7,
     'old-intel-1': 1, 'old-amd-1': 1,
-    'generic-dual': 2, 'generic-quad': 3,
+    'generic-dual': 1, 'generic-quad': 2,
   };
 
   const GPU_TIERS = {
-    'gtx-1050': 1, 'gtx-1060': 2, 'gtx-1070': 3, 'gtx-1080': 3,
+    'gtx-1050': 1, 'gtx-1060': 2, 'gtx-1070': 3, 'gtx-1080': 4, 'gtx-1080ti': 5,
     'gtx-1650': 2, 'gtx-1660': 3,
-    'rtx-2060': 3, 'rtx-2070': 4,
-    'rtx-3060': 5, 'rtx-3070': 6, 'rtx-3080': 7,
+    'rtx-2060': 4, 'rtx-2070': 5, 'rtx-2080': 5, 'rtx-2080ti': 6,
+    'rtx-3060': 5, 'rtx-3070': 6, 'rtx-3080': 7, 'rtx-3090': 8,
     'rtx-4060': 5, 'rtx-4070': 6, 'rtx-4080': 8, 'rtx-4090': 9,
-    'rtx-5070': 6, 'rtx-5080': 9,
+    'rtx-5060': 6, 'rtx-5070': 7, 'rtx-5070ti': 8, 'rtx-5080': 9, 'rtx-5090': 10,
     'rx-580': 1,
     'rx-5700': 3,
     'rx-6600': 4, 'rx-6700': 5, 'rx-6800': 6, 'rx-6900': 7,
-    'rx-7700': 5, 'rx-7800': 6, 'rx-7900': 8,
-    'rx-9070': 6,
+    'rx-7600': 4, 'rx-7700': 5, 'rx-7800': 6, 'rx-7900xt': 7, 'rx-7900xtx': 8,
+    'rx-9060xt': 5, 'rx-9070': 7,
     'integrada': 1,
     'rdna2-apu': 2, 'rdna2-680m': 2, 'rdna3-740m': 1, 'rdna3-780m': 3, 'rdna35-890m': 4,
     'gtx-old-tier1': 1, 'gtx-970': 2, 'gtx-780': 2, 'gtx-980': 3,
